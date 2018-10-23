@@ -9,7 +9,7 @@
   <body>
     <h1>Create Account</h1>
     <div class="create">
-      <form action="#" method="post">
+      <form action="controllers/ca_controller.php" method="post">
         <label for="first">First Name:</label>
         <br/>
         <input type="text" name="first" placeholder="John" required/><br/>
@@ -19,8 +19,8 @@
         <input type="email" name="email" placeholder="doej@rpi.edu" required/><br/>
         <label for="rin">RIN:</label><br/>
         <input type="number" min="660000000" max="999999999" name="rin" placeholder="660000000" required/><br/>
-        <label for="username">Username:</label><br/>
-        <input type="text" name="username" placeholder="Use RCS ID/username" required/><br/>
+        <label for="rcsID">RCS ID:</label><br/>
+        <input type="text" name="rcsID" placeholder="Use your RCS ID" required/><br/>
         <label for="password">Password:</label><br/>
         <input type="password" name="password" placeholder="Enter password" required/><br/>
         <br/>
