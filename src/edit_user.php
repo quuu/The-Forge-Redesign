@@ -8,11 +8,12 @@
   <body>
     <h1>Edit User</h1>
     <div class="create">
-      <form id="testing">
-        <input type="text" id="lookup" name="rin" placeholder="to Edit" required/><br/>
+      <form id="get_info">
+        <label for="lookup">RIN For Lookup</label>
+        <input type="text" id="lookup" name="rin" placeholder="660000000" required/><br/>
         <input type="submit" name='Submit' value="Lookup">
       </form>
-      <br/><br/><br/>
+      <br/>
 
 
       <form action="controllers/edit_controller.php" method="post">
@@ -27,10 +28,8 @@
         <input type="number" id="rin" min="660000000" max="999999999" name="rin" placeholder="660000000" required/><br/>
         <label for="rcsID">RCS ID:</label><br/>
         <input type="text" id="rcsID" name="rcsID" placeholder="Use your RCS ID" required/><br/>
-        <label for="password">Password:</label><br/>
-        <input type="password" id="password" name="password" placeholder="Enter password" required/><br/>
         <br/>
-        <input type="submit" name='Submit' value="Create">
+        <input type="submit" name='Submit' value="Update">
       </form>
     </div>
     <script src="js/jquery-3.3.1.min.js"></script>

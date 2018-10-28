@@ -1,9 +1,12 @@
 <?php
-include_once "db_connector.php";
-$conn=dbConnect();
-
 if(isset($_POST['rin'])){
-    $rin=$_POST['rin'];
+
+    //connect to database after they fill in RIN
+    include_once "db_connector.php";
+    $conn = dbConnect();
+
+    //retrieving rest of user data
+    $rin = $_POST['rin'];
     $stmt = $conn->prepare('SELECT * FROM Users WHERE rin=:user');
     $stmt->bindParam(':user',$rin);
     $stmt->execute();
@@ -16,8 +19,10 @@ if(isset($_POST['rin'])){
         echo $user['firstName']." ";
         echo $user['lastName']." ";
         echo $user['email']." ";
-        echo $user['password']." ";
     }
+}
+else{
+    echo "Did not fill in a RIN";
 }
 
 
