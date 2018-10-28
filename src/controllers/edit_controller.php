@@ -2,7 +2,7 @@
 
 include_once "db_connector.php";
 $conn = dbConnect();
-if(isset($_POST['rcsID']) && isset($_POST['password'])){
+if(isset($_POST['rcsID']) && isset($_POST['rin'])){
 
     //Removing the user previously inserted
     //TODO: Add more checking to make sure all the fields are filled

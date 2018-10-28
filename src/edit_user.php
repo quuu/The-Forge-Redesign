@@ -9,7 +9,7 @@
     <h1>Edit User</h1>
     <div class="create">
       <form id="get_info">
-        <label for="lookup">RIN For Lookup</label>
+        <label for="lookup">RIN For Lookup</label><br/>
         <input type="text" id="lookup" name="rin" placeholder="660000000" required/><br/>
         <input type="submit" name='Submit' value="Lookup">
       </form>
