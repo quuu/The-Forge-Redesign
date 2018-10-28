@@ -1,5 +1,5 @@
 <?php
-include "controllers/auth_controller.php";
+//include "controllers/auth_controller.php";
 include "controllers/print_form_controller.php";
 ?>
 <!DOCTYPE html>
@@ -12,32 +12,36 @@ include "controllers/print_form_controller.php";
 </head>
 <body>
     <form action="#" method="POST">
-        <label for="plastic">Plastic Type</label>
+        <br/>
+        <label for="machine" id="machine">Machine used for print</label>
+        <select name="machine" required>
+           <?php generateMachineDropDown() ?>
+        </select>
+        <br/>
+        <label for="plastic" id="plasticlabel">Plastic Type</label>
         <select name="plastic"  id="plastictype" required>
+            <!--
             <option value="pla">PLA ($0.07/gram)</option>
             <option value="abs">ABS ($0.06/gram)</option>
             <option value="nylon">Nylon ($0.10/gram)</option>
             <option value="flexy">Flexy ($0.09/gram)</option>
             <option value="ngen">nGen ($0.055/gram)</option>
             <option value="resin">Resin ($0.20/mL)</option>
+            -->
+            <?php generatePlasticsDropDown() ?>
         </select>
         <br/>
         <label for="amount" id="amountlabel">Amount of plastic (in g)</label>
         <input type="text" name="amount" id="plasticamount" required/>
         <br/>
-        <label for="brand">Plastic Brand</label>
-        <input type="text" name="brand" required/>
+        <label for="brand" id = "brandlabel">Plastic Brand</label>
+        <input type="text" name="brand" id = "brand" required/>
         <br/>
-        <label for="temp">Print temperature</label>
-        <input type="text" name="temp" required/>
+        <label for="temp" id = "templabel">Print temperature</label>
+        <input type="text" name="temp" id = "temp" required/>
         <br/>
-        <label for="color">Color of Plastic</label>
-        <input type="text" name="color" required/>
-        <br/>
-        <label for="machine">Machine used for print</label>
-        <select name="machine" required>
-            <?php generateMachineDropDown() ?>
-        </select>
+        <label for="color" id = "colorlabel">Color of Plastic</label>
+        <input type="text" name="color" id = "color" required/>
         <br/>
         <label for="time">Estimate time to completion (in minutes):</label>
         <input type="number" name="time" min="1" max="1000" required/>
@@ -52,6 +56,9 @@ include "controllers/print_form_controller.php";
         <input type="checkbox" name="reprintpolicy" value="agree" required/>
         <label for="reprintpolicy"> By checking the box you agree to the reprint policy stated above.</label>
         </div>
+        <label for="initials" id = "initials">By initialing here, you agree to the charges entered above.</label>
+        <input type="text" name="initials" required/>
+        <br/>
         <input type="submit" value="Submit"/>
     </form>
 </body>
