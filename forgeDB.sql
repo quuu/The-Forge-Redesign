@@ -49,9 +49,7 @@ CREATE TABLE `volunteers` (
 CREATE TABLE `plastics` (
   `pID` int NOT NULL AUTO_INCREMENT,
   `type` varchar(20) NOT NULL,
-  `brand` varchar(255) NOT NULL,
-  `color` varchar(255) NOT NULL,
-  `price` int NOT NULL,
+  `price` float(11) NOT NULL,
   PRIMARY KEY (`pID`)
 );
 
@@ -77,4 +75,12 @@ CREATE TABLE `sessions` (
   INSERT INTO `hardware`(`inUse`, `status`, `machineName`) VALUES (0,1,"Makerbot Mini");
   INSERT INTO `hardware`(`inUse`, `status`, `machineName`) VALUES (0,1,"Form 1+");
   INSERT INTO `hardware`(`inUse`, `status`, `machineName`) VALUES (0,1,"Sewing Machine");
+  
+  
+  INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (1,"PLA",0.07);
+  INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (2,"ABS",0.06);
+  INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (3,"Nylon",0.1);
+  INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (4,"Flexy",0.09);
+  INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (5,"nGen",0.055);
+  INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (6,"Resin",0.2);
 
