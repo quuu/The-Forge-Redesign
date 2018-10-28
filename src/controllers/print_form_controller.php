@@ -22,7 +22,7 @@ function generateMachineDropDown(){
 // Polls the database for prices of materials
 function generatePlasticsDropDown(){
     $connection = dbconnect();
-    $stmt = $connection->prepare('SELECT pID FROM plastics');
+    $stmt = $connection->prepare('SELECT * FROM plastics');
     $stmt->execute();
     $prices = $stmt->fetchall();
     foreach($prices as $price){
