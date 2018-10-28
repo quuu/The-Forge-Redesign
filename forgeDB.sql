@@ -3,8 +3,8 @@ USE `forge`;
 
 CREATE TABLE `projects` (
   `pid` int NOT NULL AUTO_INCREMENT,
-  `plastic` varchar(10) NOT NULL,
-  `amount` varchar(50) NOT NULL,
+  `plastic` varchar(10),
+  `amount` varchar(50),
   `payment` int,
   `machine` varchar(50) NOT NULL,
   `forClass` BOOLEAN,
@@ -15,6 +15,7 @@ CREATE TABLE `projects` (
   `timesFailed` int,
   `plasticBrand` varchar(255),
   `userID` int NOT NULL,
+  `userInit` varchar(10),
   PRIMARY KEY (`pid`)
 );
 
