@@ -24,17 +24,10 @@ $(document).ready(function(){
         function () {
             var type = $('option:selected').val();
             if(type == "3D Scanner" || type == "Laser Cutter" || type == "Sewing Machine" || type == "Vinyl Cutter"){
-                $('#plasticlabel').hide();
-                $('#plastictype').hide();
-                $('#amountlabel').hide();
-                $('#plasticamount').hide();
-                $('#brandlabel').hide();
-                $('#brand').hide();
-                $('#templabel').hide();
-                $('#temp').hide();
-                $('#colorlabel').hide();
-                $('#color').hide();
+                $('#plasticInfo').hide();
                 $('#reprintpolicy').hide();
+                $('#initialslabel').hide();
+                $('#initials').hide();
             }
         });
  });  
