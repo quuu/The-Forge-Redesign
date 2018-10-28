@@ -27,6 +27,6 @@
         <input type="submit" name='Submit' value="Create">
       </form>
     </div>
-    <script src="resources/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
   </body>
 </html>
