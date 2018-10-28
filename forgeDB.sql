@@ -46,6 +46,16 @@ CREATE TABLE `volunteers` (
   PRIMARY KEY (`vID`)
 );
 
+CREATE TABLE `plastics` (
+  `pID` int NOT NULL AUTO_INCREMENT,
+  `type` varchar(20) NOT NULL,
+  `brand` varchar(255) NOT NULL,
+  `color` varchar(255) NOT NULL,
+  `price` int NOT NULL,
+  PRIMARY KEY (`pID`)
+);
+
+
 CREATE TABLE `sessions` (
   `sessionID` varchar(1000) NOT NULL,
   `userID` int NOT NULL,
