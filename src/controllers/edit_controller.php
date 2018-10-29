@@ -22,6 +22,7 @@ if(isset($_POST['rcsID']) && isset($_POST['rin'])){
     $stmt->bindParam(':lastname',$last);
     $stmt->bindParam(':email',$email);
     $stmt->bindParam(':rin',$rin);
+    $stmt->bindParam(':rcsID',$rcsID);
     $stmt->execute();
     exit();
 }else{
