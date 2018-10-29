@@ -10,7 +10,7 @@ if(isset($_POST['rcsID']) && isset($_POST['rin'])){
     // get the rin
     $rin = $_POST['rin'];
     //update query
-    $stmt = $conn->prepare('UPDATE Users SET rcsID := rcsID, firstName = :firstname, lastName = :lastname, email = :email WHERE rin = :rin');
+    $stmt = $conn->prepare('UPDATE Users SET rcsID = :rcsID, firstName = :firstname, lastName = :lastname, email = :email WHERE rin = :rin');
 
     //replace necessary fields
     $first = $_POST['first'];
