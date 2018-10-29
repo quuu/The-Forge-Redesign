@@ -1,8 +1,9 @@
 <?php
+
+include_once "db_connector.php";
 if(isset($_POST['rin'])){
 
     //connect to database after they fill in RIN
-    include_once "db_connector.php";
     $conn = dbConnect();
 
     //retrieving rest of user data

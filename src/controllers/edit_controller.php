@@ -1,8 +1,8 @@
 <?php
 
+include_once "db_connector.php";
 if(isset($_POST['rcsID']) && isset($_POST['rin'])){
 
-    include_once "db_connector.php";
     $conn = dbConnect();
 
     //TODO: password changing
