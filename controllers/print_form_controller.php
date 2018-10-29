@@ -26,12 +26,13 @@ function generatePlasticsDropDown(){
     $stmt->execute();
     $prices = $stmt->fetchall();
     foreach($prices as $price){
+        // JSON Hates single quotes hence all the escapes
+        $option_value = "{\"type\":\"" . $price["type"] . "\", \"price\":\"" . $price["price"] . "\"}";
         if($price["type"]  == "Resin"){
-            $item = "<option value=" . "\"" . $price["type"] . "\"" . ">" . $price["type"] ."( " . $price["price"] . "mL" . " )";
+            $item = "<option value='" . $option_value . "'" . ">" . $price["type"] ." ( $" . $price["price"] . "/mL" . " )";
         }else {
-            $item = "<option value=" . "\"" . $price["type"] . "\"" . ">" . $price["type"] . "( " . $price["price"] . "g" . " )";
+            $item = "<option value='" . $option_value . "'" . ">" . $price["type"] . " ( $" . $price["price"] . "/g" . " )";
         }
-        $item .= $prices["pID"];
         echo $item;
     }
 }
