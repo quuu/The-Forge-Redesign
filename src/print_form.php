@@ -44,7 +44,7 @@ include "controllers/print_form_controller.php";
             <label for="color" id = "colorlabel">Color of Plastic</label>
             <input type="text" name="color" id = "color" required/>
             <br/>
-            <label for="time">Estimate time to completion (in minutes):</label>
+            <label for="time">Estimate time to completion (in HH format):</label>
             <input type="number" name="time" min="1" max="1000" required/>
             <br/>
         </div>
