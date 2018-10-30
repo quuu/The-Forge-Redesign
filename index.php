@@ -182,7 +182,7 @@
       <div class="align-self-center p-5 col-md-6">
         <h1 class="mb-4">Gallery</h1>
         <p class="mb-5">Take a look at some projects fellow students have worked on as well as previous hosted events.</p>
-        <a class="btn btn-lg btn-outline-dark" href="#">View the gallery</a>
+        <a class="btn btn-lg btn-outline-dark" href="gallery.php">View the gallery</a>
       </div>
       <div class="col-md-6 p-0">
         <img class="img-fluid d-block" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg"> </div>
