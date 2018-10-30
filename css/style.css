@@ -1,0 +1,9 @@
+.virtual_list_item:hover{
+  background-color: red;
+  color: white;
+  text-decoration: none !important;
+}
+
+.virtual_link:hover{
+  text-decoration: none;
+}

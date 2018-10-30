@@ -55,12 +55,16 @@
           <div class="col-sm-9">
             <h3 class="">Find us Virtually</h3>
             <ul class="list-group">
-              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info"><a href="https://www.facebook.com/RPIMakerSpace/">Facebook</a>
-                <i class="fa fa-fw fa-facebook"></i>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info"><a href="https://www.instagram.com/rpi.forge/">Instragram</a>
-                <i class="fa fa-fw fa-instagram"></i>
-              </li>
+              <a href="https://www.facebook.com/RPIMakerSpace/" target="_blank" class="virtual_link">
+                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Facebook
+                  <i class="fa fa-fw fa-facebook"></i>
+                </li>
+              </a>
+              <a href="https://www.instagram.com/rpi.forge/" target="_blank" class="virtual_link">
+                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Instragram
+                  <i class="fa fa-fw fa-instagram"></i>
+                </li>
+              </a>
             </ul>
           </div>
         </div>
