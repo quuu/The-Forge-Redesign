@@ -42,7 +42,7 @@
           <div class="col-sm-9">
             <h3 class="">Find us Physically</h3>
             <p class="">We are located in the CII 2037. &nbsp;Take the elevators down in the LOW building to the second floor. &nbsp;If the sign is flipped to OPEN, come on in. &nbsp;The open hours are linked below</p>
-            <a class="btn btn-primary" href="hoursOfOperation.html">Hours of Operation
+            <a class="btn btn-primary" href="hours.php">Hours of Operation
               <br> </a>
           </div>
         </div>
@@ -55,17 +55,11 @@
           <div class="col-sm-9">
             <h3 class="">Find us Virtually</h3>
             <ul class="list-group">
-              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info">Facebook
+              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info"><a href="https://www.facebook.com/RPIMakerSpace/">Facebook</a>
                 <i class="fa fa-fw fa-facebook"></i>
               </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info">Reddit
-                <i class="fa fa-fw fa-reddit-alien"></i>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info">Union Website
-                <i class="fa fa-fw fa-external-link"></i>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-info">Core Engineering Website
-                <i class="fa fa-fw fa-external-link"></i>
+              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info"><a href="https://www.instagram.com/rpi.forge/">Instragram</a>
+                <i class="fa fa-fw fa-instagram"></i>
               </li>
             </ul>
           </div>
@@ -195,20 +189,7 @@
     </div>
   </div>
   </div>
-  <div class="text-white bg-primary">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 mt-3">
-        <p class="text-center text-white">© Copyright 2018 RPI Forge - All rights reserved. </p>
-      </div>
-    </div>
-  </div>
-  </div>
-  <!-- Add your site or application content here -->
-  <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
-  <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
+  <?php include 'footer.php';?>
 </body>
 
 </html>
