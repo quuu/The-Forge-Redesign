@@ -14,7 +14,7 @@
   <title>The Forge @ RPI</title>
 </head>
 
-<body class="bg-light">
+<body>
   <?php include 'nav_bar.php';?>
   <div class="py-5 text-center bg-primary filter-dark cover" style="background-image: url('homePagePhotos/CII2037.JPG');background-size:cover;background-position:center center;">
   <div class="container">
@@ -42,7 +42,7 @@
           <div class="col-sm-9">
             <h3 class="">Find us Physically</h3>
             <p class="">We are located in the CII 2037. &nbsp;Take the elevators down in the LOW building to the second floor. &nbsp;If the sign is flipped to OPEN, come on in. &nbsp;The open hours are linked below</p>
-            <a class="btn btn-primary" href="hoursOfOperation.html">Hours of Operation
+            <a class="btn btn-primary" href="hours.php">Hours of Operation
               <br> </a>
           </div>
         </div>
@@ -55,18 +55,16 @@
           <div class="col-sm-9">
             <h3 class="">Find us Virtually</h3>
             <ul class="list-group">
-              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info">Facebook
-                <i class="fa fa-fw fa-facebook"></i>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info">Reddit
-                <i class="fa fa-fw fa-reddit-alien"></i>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info">Union Website
-                <i class="fa fa-fw fa-external-link"></i>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-info">Core Engineering Website
-                <i class="fa fa-fw fa-external-link"></i>
-              </li>
+              <a href="https://www.facebook.com/RPIMakerSpace/" target="_blank" class="virtual_link">
+                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Facebook
+                  <i class="fa fa-fw fa-facebook"></i>
+                </li>
+              </a>
+              <a href="https://www.instagram.com/rpi.forge/" target="_blank" class="virtual_link">
+                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Instragram
+                  <i class="fa fa-fw fa-instagram"></i>
+                </li>
+              </a>
             </ul>
           </div>
         </div>
@@ -188,27 +186,14 @@
       <div class="align-self-center p-5 col-md-6">
         <h1 class="mb-4">Gallery</h1>
         <p class="mb-5">Take a look at some projects fellow students have worked on as well as previous hosted events.</p>
-        <a class="btn btn-lg btn-outline-dark" href="#">View the gallery</a>
+        <a class="btn btn-lg btn-outline-dark" href="gallery.php">View the gallery</a>
       </div>
       <div class="col-md-6 p-0">
         <img class="img-fluid d-block" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg"> </div>
     </div>
   </div>
   </div>
-  <div class="text-white bg-primary">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 mt-3">
-        <p class="text-center text-white">© Copyright 2018 RPI Forge - All rights reserved. </p>
-      </div>
-    </div>
-  </div>
-  </div>
-  <!-- Add your site or application content here -->
-  <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
-  <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
+  <?php include 'footer.php';?>
 </body>
 
 </html>

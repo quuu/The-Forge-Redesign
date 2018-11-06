@@ -12,5 +12,6 @@
       <button><a href="./create_account.php">Create Account</a></button>
   </div>
   <script src="js/jquery-3.3.1.min.js"></script>
+  <?php include 'footer.php';?>
 </body>
 </html>
