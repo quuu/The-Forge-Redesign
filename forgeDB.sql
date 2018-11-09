@@ -58,7 +58,7 @@ CREATE TABLE `plastics` (
 CREATE TABLE `sessions` (
   `sessionID` varchar(1000) NOT NULL,
   `userID` int NOT NULL,
-  `experation` DATETIME,
+  `expiration` DATETIME,
   PRIMARY KEY (`sessionID`(191))
 );
 
