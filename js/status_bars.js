@@ -33,7 +33,7 @@ function status_bars(){
      * machines[n][2] == machineName
      * machines[n][3] == usePlastics
      */
-    fetchMachines(function(data){
+    fetchMachines(function(machines){
 
         /**
          * pid
@@ -53,29 +53,38 @@ function status_bars(){
          */
         //nested projects
         fetchProjects(function(projects){
-            for(var i=0;i<data.length;i++){
-                if(typeof data[i] !== "undefined"){
-                    console.log(data[i])
-                    $('#statuses').append("<p id=\"" +data[i]['machineName']+ "\"> Machine Name: "  +data[i]['machineName']+"</p>");
-                    
+            for(var i=0;i<machines.length;i++){
+                if(typeof machines[i] !== "undefined"){
+                    console.log(machines[i])
+                    $('#statuses').append("<p id=\"" +machines[i]['machineName']+ "\"> Machine Name: "  +machines[i]['machineName']+"</p>");
+                    if(machines[i]['status']==0){
+                        //display out of order    
+                    }
+                    else{
+                        if(machines[i]['inUse']==0){
+                            //display not being used
+                        }
+                        else{
+                            //being used
+                        }
+                    }
                     
                     //status bar display
                     $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar\" role=\"progressbar\" style=\"width: 50%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div></div>");
                 }
             }
-            for(var i=0;i<projects.length;i++){
-                if(typeof projects[i] !== "undefined"){
-                    // console.log(projects[i])
-                    var date = new Date();
-                    console.log("current " + date);
-                    var start = new Date(projects[i]['startTime']);
-                    console.log("start " + start)
-                    console.log(projects[i]['startTime'])
+            // for(var i=0;i<projects.length;i++){
+            //     if(typeof projects[i] !== "undefined"){
+            //         var date = new Date();
+            //         console.log("current " + date);
+            //         var start = new Date(projects[i]['startTime']);
+            //         console.log("start " + start)
+            //         console.log(projects[i]['startTime'])
                     
-                    console.log(projects[i]['eta'])
-                    $('#statuses').append("<p> Project: "  +projects[i]['pid']+"</p>");
-                }
-            }
+            //         console.log(projects[i]['eta'])
+            //         $('#statuses').append("<p> Project: "  +projects[i]['pid']+"</p>");
+            //     }
+            // }
         }); 
         
         
