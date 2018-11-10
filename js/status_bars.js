@@ -58,19 +58,22 @@ function status_bars(){
                     console.log(machines[i])
                     $('#statuses').append("<p id=\"" +machines[i]['machineName']+ "\"> Machine Name: "  +machines[i]['machineName']+"</p>");
                     if(machines[i]['status']==0){
-                        //display out of order    
+                        //display out of order   
+                        $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-danger\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"\" aria-valuemin=\"0\" aria-valuemax=\"100\">Out of order</div></div>") 
                     }
                     else{
                         if(machines[i]['inUse']==0){
                             //display not being used
+                            $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-info\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">Not printing</div></div>") 
                         }
                         else{
                             //being used
+
+                            $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-success\" role=\"progressbar\" style=\"width: 50%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div></div>");
                         }
                     }
                     
                     //status bar display
-                    $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar\" role=\"progressbar\" style=\"width: 50%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div></div>");
                 }
             }
             // for(var i=0;i<projects.length;i++){
