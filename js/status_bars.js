@@ -55,51 +55,68 @@ function status_bars(){
         fetchProjects(function(projects){
             console.log(projects);
             for(var i=0;i<machines.length;i++){
+
+                //makes sure not undefined
                 if(typeof machines[i] !== "undefined"){
-                    console.log(machines[i])
+
+                    //appending machine name
                     $('#statuses').append("<p id=\"" +machines[i]['machineName']+ "\"> Machine Name: "  +machines[i]['machineName']+"</p>");
                     if(machines[i]['status']==0){
-                        //display out of order   
-                        $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-danger\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"\" aria-valuemin=\"0\" aria-valuemax=\"100\">Out of order</div></div>") 
+
+                        //display "machine out of order" status bar 
+                        $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-danger\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">Out of order</div></div>") 
                     }
                     else{
                         if(machines[i]['inUse']==0){
-                            //display not being used
+                            
+                            //display "machine not being used" status bar
                             $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-info\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">Not printing</div></div>") 
                         }
                         else{
+
+                            //not inefficient double for loop since only select projects that don't have end time
+                            var matchedProject;
                             for(var j=0;j<projects.length;j++){
-                                console.log(projects[j]['machine'] + " <===> " + machines[i]['machineName'])
                                 if(projects[j]['machine']===machines[i]['machineName']){
-                                    // break;
-                                    console.log('#'+machines[i]['machineName'].replace(" ", "\ "))
-                                    var el = document.getElementById('Sewing Machine');
-                                    if(typeof el != 'undefined' && el != null){
-                                        console.log("valid")
-                                    }
-                                    el.innerHTML+= " ----- Started: " +projects[j]['eta'];
+                                    
+                                    //save which project is being printed by this machine
+                                    matchedProject = projects[j];
+
+                                    //adding project print information next to machine name
+                                    var el = document.getElementById(machines[i]['machineName']);
+                                    el.innerHTML+= " ----- Started: " +projects[j]['startTime'] + " ----- By: " + projects[j]['userID'];
                                 }
                             }
-                            //being used
-                            $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-success\" role=\"progressbar\" style=\"width: 50%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div></div>");
+
+                            //time variables
+                            var start = new Date(matchedProject['startTime']);
+                            var eta = new Date(matchedProject['eta']);
+                            var current = new Date();
+
+
+                            //if project start time is AFTER current time
+                            if(start > current){
+                                $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-warning\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\">Print not started yet</div></div>");
+                            }
+
+                            //if current time is AFTER end time
+                            else if(current > eta){
+
+                                $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-success\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\">Print finished already</div></div>");
+                            }
+
+                            //currently printing
+                            else{
+                                var totalTime = eta-start;
+                                var timeElapsed = current-start;
+                                var percentage = timeElapsed/totalTime * 100;
+                                $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped progress-bar-animated bg-success\"  role=\"progressbar\" style=\"width: "+ percentage+"%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\">"+percentage+"</div></div>");
+                            }
                         }
                     }
                     
-                    //status bar display
                 }
             }
-            // for(var i=0;i<projects.length;i++){
-            //     if(typeof projects[i] !== "undefined"){
-            //         var date = new Date();
-            //         console.log("current " + date);
-            //         var start = new Date(projects[i]['startTime']);
-            //         console.log("start " + start)
-            //         console.log(projects[i]['startTime'])
-                    
-            //         console.log(projects[i]['eta'])
-            //         $('#statuses').append("<p> Project: "  +projects[i]['pid']+"</p>");
-            //     }
-            // }
         }); 
         
         
@@ -115,6 +132,6 @@ $(document).ready(function(){
     //initial call
     status_bars();
 
-    //repeating call every 10 seconds
+    //repeating call every 10 seconds, uncomment for auto refresh
     // setInterval(status_bars,10000);
 });

@@ -2,9 +2,9 @@
 
 include_once "db_connector.php";
 
-//gets hardware information
+//gets project information for projects not yet completed
 $conn = dbConnect();
-$stmt = $conn->prepare('SELECT * FROM projects WHERE success=0');
+$stmt = $conn->prepare('SELECT * FROM projects WHERE endTime IS NULL');
 $stmt->execute();
 $result = $stmt->fetchAll();
 
