@@ -15,10 +15,4 @@ else{
     echo json_encode($result, JSON_PRETTY_PRINT);
 }
 
-// $stmt = $conn->prepare('SELECT * FROM projects');
-// $stmt->execute();
-// $result = $stmt->fetchAll();
-
-// echo json_encode($result, JSON_PRETTY_PRINT);
-
 ?>
