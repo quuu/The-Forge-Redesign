@@ -61,21 +61,27 @@ function status_bars(){
 
                     //appending machine name
                     $('#statuses').append("<p id=\"" +machines[i]['machineName']+ "\"> Machine Name: "  +machines[i]['machineName']+"</p>");
+                    
+                    //display "machine out of order" status bar 
                     if(machines[i]['status']==0){
-
-                        //display "machine out of order" status bar 
                         $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-danger\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">Out of order</div></div>") 
                     }
+
+                    //if machine is able to print
                     else{
+
+                        //currently not in use
                         if(machines[i]['inUse']==0){
-                            
-                            //display "machine not being used" status bar
                             $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-info\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">Not printing</div></div>") 
                         }
+                        
+                        //currently in use, inUse == 1
                         else{
 
-                            //not inefficient double for loop since only select projects that don't have end time
+                            //for the details of project being printed
                             var matchedProject;
+
+                            //not inefficient double for loop since only select projects that don't have end time
                             for(var j=0;j<projects.length;j++){
                                 if(projects[j]['machine']===machines[i]['machineName']){
                                     
@@ -85,6 +91,9 @@ function status_bars(){
                                     //adding project print information next to machine name
                                     var el = document.getElementById(machines[i]['machineName']);
                                     el.innerHTML+= " ----- Started: " +projects[j]['startTime'] + " ----- By: " + projects[j]['userID'];
+
+                                    //no need to check other projects if match is found
+                                    break;
                                 }
                             }
 
@@ -93,7 +102,6 @@ function status_bars(){
                             var eta = new Date(matchedProject['eta']);
                             var current = new Date();
 
-
                             //if project start time is AFTER current time
                             if(start > current){
                                 $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-warning\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\">Print not started yet</div></div>");
@@ -101,7 +109,6 @@ function status_bars(){
 
                             //if current time is AFTER end time
                             else if(current > eta){
-
                                 $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-success\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\">Print finished already</div></div>");
                             }
 
