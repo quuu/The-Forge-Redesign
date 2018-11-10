@@ -26,61 +26,71 @@ function fetchProjects(projectsReturn){
     });
 }
 
-
-//populate the webpage with information upon load
-$(document).ready(function(){
-
-    /**
+function status_bars(){
+   /**
      * machines[n][0] == inUSe
      * machines[n][1] == status
      * machines[n][2] == machineName
      * machines[n][3] == usePlastics
      */
     fetchMachines(function(data){
-        for(var i=0;i<data.length;i++){
-            if(typeof data[i] !== "undefined"){
-                console.log(data[i])
-                $('#statuses').append("<p> Machine Name: "  +data[i][2]+"</p>");
-            }
-        }
-    });
-    fetchProjects(function(data){
-        for(var i=0;i<data.length;i++){
-            if(typeof data[i] !== "undefined"){
-                console.log(data[i])
-                // $('#statuses').append("<p> Machine Name: "  +data[i][2]+"</p>");
-            }
-        }
-    });
-    // e.preventDefault();
 
-    // var machineData = fetchMachines();
-    // console.log(machineData);
-    /**
-     * obj[n][0] = inUse
-     * obj[n][1] = status
-     * obj[n][2] = machineName
-     * obj[n][3] = usesPlastic
-     * 
-     */
-    //index 3 is the name of the machine, index 0 is the machine id
-    //parses machine information
-    // for(var i=0;i<machineData.length;i++){
-    //     if(typeof machineData[i] !== "undefined"){
-    //         console.log(machineData[i])
-    //         $('#statuses').append("<p> Machine Name: "  +machineData[i][2]+"</p>");
-    //     }
-    // }
-
-    // var projectData = fetchProjects();
-    // for(var i=0;i<projectData.length;i++){
-    //     if(typeof obj[i] !== "undefined"){
-    //         console.log(projectData[i]);
-    //     }
-    // }
+        /**
+         * pid
+         * plastic
+         * amount
+         * payment
+         * machine -> machineName
+         * forClass
+         * startTime
+         * eta
+         * endTime
+         * success
+         * timesFailed
+         * plasticBrand
+         * userID
+         * userInit
+         */
+        //nested projects
+        fetchProjects(function(projects){
+            for(var i=0;i<data.length;i++){
+                if(typeof data[i] !== "undefined"){
+                    console.log(data[i])
+                    $('#statuses').append("<p id=\"" +data[i]['machineName']+ "\"> Machine Name: "  +data[i]['machineName']+"</p>");
+                    
+                    
+                    //status bar display
+                    $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar\" role=\"progressbar\" style=\"width: 50%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div></div>");
+                }
+            }
+            for(var i=0;i<projects.length;i++){
+                if(typeof projects[i] !== "undefined"){
+                    // console.log(projects[i])
+                    var date = new Date();
+                    console.log("current " + date);
+                    var start = new Date(projects[i]['startTime']);
+                    console.log("start " + start)
+                    console.log(projects[i]['startTime'])
+                    
+                    console.log(projects[i]['eta'])
+                    $('#statuses').append("<p> Project: "  +projects[i]['pid']+"</p>");
+                }
+            }
+        }); 
+        
+        
+        
+    });
 
     
+}
 
+//populate the webpage with information upon load
+$(document).ready(function(){
 
+    //initial call
+    status_bars();
 
+    //repeating call every 10 seconds
+    // setInterval(status_bars,10000);
 });

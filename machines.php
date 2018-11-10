@@ -3,15 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Machines</title>
+  <link rel="stylesheet" type="text/css" href="./css/home.css">
   <?php include 'style.php';?>
 </head>
 
 <body>
   <?php include 'nav_bar.php';?>
   <pre id="statuses">
-
-  aaa
-
   </pre>
 </body>
 
