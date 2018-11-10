@@ -53,6 +53,7 @@ function status_bars(){
          */
         //nested projects
         fetchProjects(function(projects){
+            console.log(projects);
             for(var i=0;i<machines.length;i++){
                 if(typeof machines[i] !== "undefined"){
                     console.log(machines[i])
@@ -67,8 +68,19 @@ function status_bars(){
                             $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-info\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">Not printing</div></div>") 
                         }
                         else{
+                            for(var j=0;j<projects.length;j++){
+                                console.log(projects[j]['machine'] + " <===> " + machines[i]['machineName'])
+                                if(projects[j]['machine']===machines[i]['machineName']){
+                                    // break;
+                                    console.log('#'+machines[i]['machineName'].replace(" ", "\ "))
+                                    var el = document.getElementById('Sewing Machine');
+                                    if(typeof el != 'undefined' && el != null){
+                                        console.log("valid")
+                                    }
+                                    el.innerHTML+= " ----- Started: " +projects[j]['eta'];
+                                }
+                            }
                             //being used
-
                             $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-success\" role=\"progressbar\" style=\"width: 50%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div></div>");
                         }
                     }

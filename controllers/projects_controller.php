@@ -4,7 +4,7 @@ include_once "db_connector.php";
 
 //gets hardware information
 $conn = dbConnect();
-$stmt = $conn->prepare('SELECT * FROM projects');
+$stmt = $conn->prepare('SELECT * FROM projects WHERE success=0');
 $stmt->execute();
 $result = $stmt->fetchAll();
 
