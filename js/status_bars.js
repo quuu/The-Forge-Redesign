@@ -71,7 +71,7 @@ function status_bars(){
 
                         //currently not in use
                         if(machines[i]['inUse']==0){
-                            $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-info\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">Not printing</div></div>") 
+                            $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-info\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">Not performing job</div></div>") 
                         }
                         
                         //currently in use, inUse == 1
