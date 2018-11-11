@@ -53,7 +53,6 @@ function status_bars(){
          */
         //nested projects
         fetchProjects(function(projects){
-            console.log(projects);
             for(var i=0;i<machines.length;i++){
 
                 //makes sure not undefined
@@ -140,5 +139,5 @@ $(document).ready(function(){
     status_bars();
 
     //repeating call every 10 seconds, uncomment for auto refresh
-    // setInterval(status_bars,10000);
+    setInterval(status_bars,10000);
 });
