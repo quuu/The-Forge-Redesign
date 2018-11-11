@@ -89,7 +89,7 @@ function status_bars(){
 
                                     //adding project print information next to machine name
                                     var el = document.getElementById(machines[i]['machineName']);
-                                    el.innerHTML+= " ----- Started: " +projects[j]['startTime'] + " ----- By: " + projects[j]['userID'];
+                                    el.innerHTML+= " ----- Started: " + projects[j]['startTime'] + " ----- By: " + projects[j]['userID'];
 
                                     //no need to check other projects if match is found
                                     break;
