@@ -12,7 +12,7 @@ if(!$result){
     echo "invalid";
 }
 else{
-    echo json_encode($result, JSON_PRETTY_PRINT);
+    echo json_encode($result);
 }
 
 ?>

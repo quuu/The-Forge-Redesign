@@ -27,6 +27,7 @@ function fetchProjects(projectsReturn){
 }
 
 function status_bars(){
+    $('#statuses').html("");
    /**
      * machines[n][0] == inUSe
      * machines[n][1] == status
@@ -139,5 +140,5 @@ $(document).ready(function(){
     status_bars();
 
     //repeating call every 10 seconds, uncomment for auto refresh
-    setInterval(status_bars,10000);
+    setInterval(status_bars,5000);
 });
