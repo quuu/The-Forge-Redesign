@@ -11,6 +11,9 @@
         <a class="nav-link" href="index.php">Home</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="equipment.php">Equipment</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="hours.php">Hours of Operation</a>
       </li>
       <li class="nav-item">
@@ -20,6 +23,7 @@
       <li class="nav-item">
         <a class="nav-link" href="news.php">News</a>
       </li>
+
     </ul>
     <a class="btn btn-primary" href="#">Become a Member!
       <br> </a>
