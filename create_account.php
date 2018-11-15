@@ -40,21 +40,21 @@
               <h1 class="card-title text-center">Create Account</h1>
               <form action="controllers/ca_controller.php" method="post">
 
-                  <div class="form-group">
-                    <input type="text" class="form-control" name="first" placeholder="First Name" required/>
-                  </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="first" placeholder="First Name" required/>
+                </div>
 
-                  <div class="form-group">
-                    <input type="text" class="form-control" name="last" placeholder="Last Name" required/>
-                  </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="last" placeholder="Last Name" required/>
+                </div>
 
-                  <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="RPI E-mail" required/>
-                  </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" placeholder="RPI E-mail" required/>
+                </div>
 
-                  <div class="form-group">
-                    <input type="number" class="form-control" min="660000000" max="999999999" name="rin" placeholder="RIN" required/>
-                  </div>
+                <div class="form-group">
+                  <input type="number" class="form-control" min="660000000" max="999999999" name="rin" placeholder="RIN" required/>
+                </div>
 
                 <div class="form-group">
                   <input type="text" class="form-control" name="rcsID" placeholder="RCS ID" required/>
@@ -67,15 +67,11 @@
                 <div class="text-center">
                   <button class="btn btn-primary btn-clock text-uppercase" type="submit" name="submit">Create</button>
                 </div>
-
-
               </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-
   </body>
 </html>
