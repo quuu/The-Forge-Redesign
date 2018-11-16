@@ -5,7 +5,7 @@
 function fetchMachines(machineReturn){
     return $.ajax({
         method: "POST",
-        url: "../controllers/machines_controller.php",
+        url: "controllers/machines_controller.php",
         success: function(data){
             machineReturn(JSON.parse(data));
         }
@@ -19,7 +19,7 @@ function fetchMachines(machineReturn){
 function fetchProjects(projectsReturn){
     return $.ajax({
         method: "POST",
-        url: "../controllers/projects_controller.php",
+        url: "controllers/projects_controller.php",
         success: function(data){
             projectsReturn(JSON.parse(data));
         }
