@@ -2,7 +2,7 @@ $('#get_info').submit(function(e){
     e.preventDefault();
     $.ajax({
         data: $('#get_info').serialize(),
-        url: '../controllers/edit_controller_fillin.php',
+        url: 'controllers/edit_controller_fillin.php',
         method: 'POST',
         success: function(data) {
             if(data =="RIN doesn't exist"){
