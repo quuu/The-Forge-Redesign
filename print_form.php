@@ -15,7 +15,7 @@ include "controllers/print_form_controller.php";
 <body>
     <div class="container">
       <div class="row">
-        <div class="col-sm-9 col-md-9 col-lg-9 mx-auto">
+        <div class="col-sm-12 col-md-12 col-lg-9 mx-auto">
           <div class="card shadow-lg my-5">
             <div class="card-body">
               <h1 class="card-title text-center">Print Job Form</h1>
