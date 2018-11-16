@@ -20,8 +20,8 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
       echo "<script type='text/javascript'>alert('That rcsID is unavailable!');</script>";
       exit();
     }
-    $stmt = $conn->prepare('INSERT INTO Users (FirstName,LastName,Email,RIN,rcsID,Password)
-    VALUES (:firstname,:lastname,:email,:RIN,:rcsID,:Password)');
+    $stmt = $conn->prepare('INSERT INTO Users (FirstName,LastName,Email,RIN,rcsID,Password, type)
+    VALUES (:firstname,:lastname,:email,:RIN,:rcsID,:Password, "User")');
     $stmt->bindParam(':firstname',$first);
     $stmt->bindParam(':lastname',$last);
     $stmt->bindParam(':email',$email);
