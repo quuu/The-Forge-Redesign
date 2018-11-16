@@ -8,7 +8,7 @@
 </head>
 <body>
   <?php include 'nav_bar.php';?>
-  <?php include 'footer.php'; ?>
+  <?php include 'footer.php';?>
 </body>
 
 </html>
