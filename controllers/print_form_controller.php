@@ -29,9 +29,9 @@ function generatePlasticsDropDown(){
         // JSON Hates single quotes hence all the escapes
         $option_value = "{\"type\":\"" . $price["type"] . "\", \"price\":\"" . $price["price"] . "\"}";
         if($price["type"]  == "Resin"){
-            $item = "<option value='" . $option_value . "'" . ">" . $price["type"] ." ( $" . $price["price"] . "/mL" . " )";
+            $item = "<option value='" . $option_value . "'" . ">" . $price["type"] . " ( $" . $price["price"] . "/mL" . " )</option>";
         }else {
-            $item = "<option value='" . $option_value . "'" . ">" . $price["type"] . " ( $" . $price["price"] . "/g" . " )";
+            $item = "<option value='" . $option_value . "'" . ">" . $price["type"] . " ( $" . $price["price"] . "/g" . " )</option>";
         }
         echo $item;
     }
