@@ -14,15 +14,21 @@
         <a class="nav-link" href="hours.php">Hours of Operation</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="gallery.php">Gallery <!-- This will have to be changed to the new gallery -->
+        <a class="nav-link" href="gallery.php">Gallery
           <br> </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="news.php">News</a>
       </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contact.php">Contact Us
+                <br> </a>
+        </li>
     </ul>
-    <a class="btn btn-primary" href="#">Become a Member!
+    <a class="btn btn-primary" href="create_account.php">Become a Member!
       <br> </a>
+      <a class="btn btn-primary" href="login.php">Login
+          <br> </a>
   </div>
 </div>
 </nav>
