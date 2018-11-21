@@ -43,7 +43,8 @@ if(isset($_POST['rcsID']) && isset($_POST['rin'])){
     $email = $_POST['email'];
     $rin = $_POST['rin'];
     $rcsID = $_POST['rcsID'];
-    $password = $_POST['password'];
+    
+    $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
     $stmt->bindParam(':firstname',$first);
     $stmt->bindParam(':lastname',$last);
     $stmt->bindParam(':email',$email);
