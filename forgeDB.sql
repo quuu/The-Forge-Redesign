@@ -5,7 +5,10 @@ CREATE TABLE `projects` (
   `pid` int NOT NULL AUTO_INCREMENT,
   `plastic` varchar(10),
   `amount` varchar(50),
-  `payment` int,
+  `plasticColor` varchar(50),
+  `plasticBrand` varchar(255),
+  `printTemp` int(10),
+  `payment` float,
   `machine` varchar(50) NOT NULL,
   `forClass` BOOLEAN,
   `startTime` DATETIME NOT NULL,
@@ -13,9 +16,8 @@ CREATE TABLE `projects` (
   `endTime` DATETIME,
   `success` BOOLEAN,
   `timesFailed` int,
-  `plasticBrand` varchar(255),
   `userID` int NOT NULL,
-  `userInit` varchar(10),
+  `userInitials` varchar(10),
   PRIMARY KEY (`pid`)
 );
 
