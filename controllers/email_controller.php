@@ -1,9 +1,11 @@
 <?php
 // Import PHPMailer classes into the global namespace
 // These must be at the top of your script, not inside a function
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+//TODO: convert this to use a if ($_POST) block
 //Load Composer's autoloader
 require '../vendor/autoload.php';
 
@@ -19,8 +21,8 @@ try {
     $mail->Port = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('rpi.forge@gmail.com', 'NO REPLY');
-    $mail->addAddress('volkb@rocketmail.com');     // Add a recipient
+    $mail->setFrom('rpi.forge@gmail.com', 'NO_REPLY@RPI_FORGE');
+    $mail->addAddress('volkb@rocketmail.com');     // Add a recipient TODO: alter this to use POST and get name from projects table
 
     //Content
     $body = 'Your print has failed <b>your machine will be held for one hour, you must come in and restart it during that time</b> after that, the printer will be freed for use';
