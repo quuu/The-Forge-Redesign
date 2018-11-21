@@ -46,11 +46,10 @@ if(isset($_COOKIE['FORGE-SESSION'])){
 
 function adminOnly($user){
   //If user is not an admin go back
-  if(!$user['type'] != "admin"){
+  if($user['type'] != "admin"){
     header("Location: ./login.php");
     exit();
   }
-
 }
 
  ?>

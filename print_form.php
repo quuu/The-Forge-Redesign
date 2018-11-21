@@ -1,5 +1,5 @@
 <?php
-//include "controllers/auth_controller.php";
+include "controllers/auth_controller.php";
 include "controllers/print_form_controller.php";
 ?>
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ include "controllers/print_form_controller.php";
           <div class="card shadow-lg my-5">
             <div class="card-body">
               <h1 class="card-title text-center">Print Job Form</h1>
-              <form action="#" method="POST">
+              <form action="controllers/print_form_controller.php" method="post">
 
                 <label for="machine" id="machinelabel">Machine Type:</label>
                 <select name="machine" id="machine" required>
@@ -57,8 +57,8 @@ include "controllers/print_form_controller.php";
                   </div>
 
                   <div class="form-group">
-                    <label for="time">Estimate time to completion (in HH format):</label>
-                    <input type="number" class="form-control" name="time" min="1" max="1000" required/>
+                    <label for="time">Estimate time to completion (in minutes):</label>
+                    <input type="number" class="form-control" name="time" min="1" max="10000" required/>
                   </div>
                 </div>
 

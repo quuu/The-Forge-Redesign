@@ -55,9 +55,8 @@ $(document).ready(function(){
 
     // This handles making something required or not based on if it is visible
     $("form").change(function(){
-        $('.required').prop('required', function(){
+        $(this).prop('required', function(){
             return  $(this).is(':visible');
          });
     });
-
  });

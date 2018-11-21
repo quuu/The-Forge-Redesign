@@ -1,9 +1,38 @@
 <?php
 include_once "db_connector.php";
 // Ensures they didn't send bad post data
-if(isset($_POST['plastic']) && isset($_POST['amount']) && isset($_POST['time'])){
+if(isset($_POST['machine'])){
     $conn = dbConnect();
-    // ONCE WE FIX THE DATABASE I CAN FIX THIS
+    $stmt = $conn->prepare("SELECT * FROM users LEFT JOIN sessions ON users.rin = userID WHERE sessions.sessionID = :sessionID;");
+    $stmt->bindParam(":sessionID", $_COOKIE['FORGE-SESSION']);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt = $conn->prepare("INSERT INTO projects(plastic, amount, payment, machine, forClass, startTime, eta, endTime, success, timesFailed, plasticBrand, userID, userInit) 
+    VALUES (:plastic, :amount, :payment, :machine, :forClass, :startTime, :eta, NULL, NULL, 0, :brand, :ID, :initials);");
+    date_default_timezone_set("America/New_York");
+    $start = date("Y-m-d H:i:s",time());
+    if(isset($_POST['time'])){
+        $eta = date("Y-m-d H:i:s",time() + $_POST['time'] * 60);
+    }else{
+        $eta = NULL;
+    }
+    $plasticInfo = json_decode($_POST['plastic'],true);
+    $price = $_POST['amount'] * (float)$plasticInfo['price'];
+    $stmt->execute(
+        [
+            'plastic' => $plasticInfo['type'],
+            'amount' => $_POST['amount'],
+            'payment' => $price,
+            'machine' => $_POST['machine'],
+            'forClass' => $_POST['forclass'],
+            'startTime' => $start,
+            'eta' => $eta,
+            'brand' => $_POST['brand'],
+            'ID' => $user['rin'],
+            'initials' => $_POST['initials']
+        ]
+    );
+
 }
 
 // Polls the database for the machines that are not currently in use.
