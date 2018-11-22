@@ -1,3 +1,5 @@
+<?php include 'style.php';?>
+<?php include 'controllers/functions.php';?>
 <nav class="navbar navbar-expand-md bg-secondary navbar-light">
 <div class="container">
   <a class="navbar-brand" href="#">
@@ -17,16 +19,43 @@
         <a class="nav-link" href="hours.php">Hours of Operation</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="gallery.php">Gallery <!-- This will have to be changed to the new gallery -->
+        <a class="nav-link" href="gallery.php">Gallery
           <br> </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="news.php">News</a>
       </li>
-
+      <li class="nav-item">
+        <a class="nav-link" href="contact.php">Contact Us
+                <br> </a>
+      </li>
     </ul>
-    <a class="btn btn-primary" href="#">Become a Member!
-      <br> </a>
+
+      <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-user-circle" style="font-size:36px">
+                  <?php
+                        $name = getName();
+                        if($name != 404){
+                            echo $name;
+                        }
+                  ?>
+              </i>
+          </button>
+          <?php
+            if(isset($_COOKIE['FORGE-SESSION'])){
+                echo "<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuLink\">";
+                    echo "<a class=\"dropdown-item\" href=\"login.php\">Login </a>";
+                    echo "<a class=\"dropdown-item\" href=\"#\">My Forge</a>";
+                    echo "<a class=\"dropdown-item\" href=\"#\">Logout</a>";
+                echo "</div>";
+            }else{
+                echo "<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuLink\">";
+                    echo "<a class=\"dropdown-item\" href=\"login.php\">Login </a>";
+                echo "</div>";
+            }
+          ?>
+      </div>
   </div>
 </div>
 </nav>
