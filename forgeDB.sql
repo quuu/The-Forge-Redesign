@@ -86,4 +86,7 @@ CREATE TABLE `sessions` (
   INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (4,"Flexy",0.09);
   INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (5,"nGen",0.055);
   INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (6,"Resin",0.2);
+  
+  INSERT INTO `users` (`rcsID`, `rin`, `firstName`, `lastName`, `email`, `password`, `type`) VALUES
+('ADMIN', 660000000, 'Super', 'User', 'rpi.forge@gmail.com', '$2y$10$aXRt6c3hqluUmHpULUO6nOvdu0F3N6Q3AzqG0bptSQCRZ9E89dlEy', 'SuperAdmin');
 
