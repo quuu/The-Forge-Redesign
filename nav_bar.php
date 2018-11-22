@@ -1,3 +1,5 @@
+<?php include 'style.php';?>
+<?php include 'controllers/functions.php';?>
 <nav class="navbar navbar-expand-md bg-secondary navbar-light">
 <div class="container">
   <a class="navbar-brand" href="#">
@@ -28,7 +30,14 @@
 
       <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-user-circle" style="font-size:36px"></i>
+              <i class="fa fa-user-circle" style="font-size:36px">
+                  <?php
+                        $name = getName();
+                        if($name != 404){
+                            echo $name;
+                        }
+                  ?>
+              </i>
           </button>
           <?php
             if(isset($_COOKIE['FORGE-SESSION'])){

@@ -18,8 +18,6 @@ function getRCSID(){
     }else{
         return 404;
     }
-
-
 }
 
 function getName(){
@@ -39,7 +37,6 @@ function getName(){
     }else{
         return 404;
     }
-
 }
 
 function getEmail(){
@@ -59,7 +56,6 @@ function getEmail(){
     }else{
         return 404;
     }
-
 }
 
 function getPerms(){
