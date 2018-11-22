@@ -48,14 +48,18 @@
                   </div>
 
                   <div class="form-group">
-                    <input type="number" id="rin" min="660000000" max="999999999" class="form-control" name="email" placeholder="RIN" required/>
+                    <input type="number" id="rin" min="660000000" max="999999999" class="form-control" name="rin" placeholder="RIN" required/>
                   </div>
 
                   <div class="form-group">
                     <input type="text" id="rcsID" class="form-control" name="rcsID" placeholder="RCS ID" required/>
                   </div>
 
-                  <div class="text-center">
+                   <div class="form-group">
+                    <input type="password" id="password" class="form-control" name="password" placeholder="Password" />
+                  </div>
+
+                 <div class="text-center">
                     <button class="btn btn-primary btn-clock text-uppercase" type="submit" name="submit">Update</button>
                   </div>
                 </form>
