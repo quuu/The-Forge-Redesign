@@ -22,7 +22,7 @@ if(isset($_COOKIE['FORGE-SESSION'])){
       //Sets the cookie to expire in the past so the browser deletes it
       setcookie ("FORGE-SESSION", "", time() - 3600,'/');
       header("Location: ./index.php");
-      eixt();
+      exit();
     }else{
         // We update the expiration to be later on if the user is in fact already logged in
         $expiration = date("Y-m-d H:i:s",time() + (24*60*60));

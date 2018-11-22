@@ -5,7 +5,10 @@ CREATE TABLE `projects` (
   `pid` int NOT NULL AUTO_INCREMENT,
   `plastic` varchar(10),
   `amount` varchar(50),
-  `payment` int,
+  `plasticColor` varchar(50),
+  `plasticBrand` varchar(255),
+  `printTemp` int(10),
+  `payment` float,
   `machine` varchar(50) NOT NULL,
   `forClass` BOOLEAN,
   `startTime` DATETIME NOT NULL,
@@ -13,9 +16,8 @@ CREATE TABLE `projects` (
   `endTime` DATETIME,
   `success` BOOLEAN,
   `timesFailed` int,
-  `plasticBrand` varchar(255),
   `userID` int NOT NULL,
-  `userInit` varchar(10),
+  `userInitials` varchar(10),
   PRIMARY KEY (`pid`)
 );
 
@@ -84,4 +86,7 @@ CREATE TABLE `sessions` (
   INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (4,"Flexy",0.09);
   INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (5,"nGen",0.055);
   INSERT INTO `plastics`(`pID`, `type`, `price`) VALUES (6,"Resin",0.2);
+  
+  INSERT INTO `users` (`rcsID`, `rin`, `firstName`, `lastName`, `email`, `password`, `type`) VALUES
+('ADMIN', 660000000, 'Super', 'User', 'rpi.forge@gmail.com', '$2y$10$aXRt6c3hqluUmHpULUO6nOvdu0F3N6Q3AzqG0bptSQCRZ9E89dlEy', 'SuperAdmin');
 

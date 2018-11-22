@@ -89,6 +89,7 @@
     <div class="row mb-5">
       <div class="col-md-3" style="">
         <h2 class="text-primary">3D Printers</h2>
+          <a class="btn btn-primary" href="status_bars.php">Machine View<br></a>
         <p class="">We offer a variety of 3D printing options. Each with their own pros and cons. &nbsp;PLA, ABS, SLA, and even flexible filament.</p>
       </div>
       <div class="col-md-9 align-self-center" style="">
