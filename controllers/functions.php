@@ -77,5 +77,24 @@ function getPerms(){
     }
 }
 
+function getUses(){
+    if(isset($_COOKIE['FORGE-SESSION'])){
+        $sessionID = $_COOKIE['FORGE-SESSION'];
+        $conn = dbConnect();
+        //grab the UserID (RIN) from the Session Data
+        $rin = $conn->prepare("SELECT `UserID` FROM `Sessions` WHERE `sessionID` = '$sessionID'");
+        $rin->execute();
+
+        //use RIN to get 10 most recent Projects in reverse chronological order
+        $result = $conn->prepare("SELECT * FROM `projects` WHERE `userID` = '$rin' LIMIT 10 ORDER BY `startTime` DESC;");
+        $result->execute();
+
+        //return value
+        return $result;
+    }else{
+        return 404;
+    }
+}
+
 
 ?>
