@@ -62,5 +62,24 @@ function getEmail(){
 
 }
 
+function getPerms(){
+    if(isset($_COOKIE['FORGE-SESSION'])){
+        $sessionID = $_COOKIE['FORGE-SESSION'];
+        $conn = dbConnect();
+        //grab the UserID (RIN) from the Session Data
+        $rin = $conn->prepare("SELECT `UserID` FROM `Sessions` WHERE `sessionID` = '$sessionID'");
+        $rin->execute();
+
+        //use RIN to get Perms (Type)
+        $result = $conn->prepare("SELECT `type` FROM `users` WHERE `rin` = '$rin'");
+        $result->execute();
+
+        //return value
+        return $result;
+    }else{
+        return 404;
+    }
+}
+
 
 ?>
