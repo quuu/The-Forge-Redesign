@@ -30,11 +30,19 @@
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-user-circle" style="font-size:36px"></i>
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="login.php">Login </a>
-              <a class="dropdown-item" href="#">My Forge</a>
-              <a class="dropdown-item" href="#">Logout</a>
-          </div>
+          <?php
+            if(isset($_COOKIE['FORGE-SESSION'])){
+                echo "<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuLink\">";
+                    echo "<a class=\"dropdown-item\" href=\"login.php\">Login </a>";
+                    echo "<a class=\"dropdown-item\" href=\"#\">My Forge</a>";
+                    echo "<a class=\"dropdown-item\" href=\"#\">Logout</a>";
+                echo "</div>";
+            }else{
+                echo "<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuLink\">";
+                    echo "<a class=\"dropdown-item\" href=\"login.php\">Login </a>";
+                echo "</div>";
+            }
+          ?>
       </div>
   </div>
 </div>
