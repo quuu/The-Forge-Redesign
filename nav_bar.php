@@ -25,10 +25,17 @@
                 <br> </a>
         </li>
     </ul>
-    <a class="btn btn-primary" href="create_account.php">Become a Member!
-      <br> </a>
-      <a class="btn btn-primary" href="login.php">Login
-          <br> </a>
+
+      <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-user-circle" style="font-size:36px"></i>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="login.php">Login </a>
+              <a class="dropdown-item" href="#">My Forge</a>
+              <a class="dropdown-item" href="#">Logout</a>
+          </div>
+      </div>
   </div>
 </div>
 </nav>
