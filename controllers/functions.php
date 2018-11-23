@@ -6,11 +6,13 @@ function getRCSID(){
         $sessionID = $_COOKIE['FORGE-SESSION'];
         $conn = dbConnect();
         //grab the UserID (RIN) from the Session Data
-        $rin = $conn->prepare("SELECT `UserID` FROM `Sessions` WHERE `sessionID` = '$sessionID'");
+        $rin = $conn->prepare("SELECT UserID FROM Sessions WHERE sessionID = :sessionID");
+        $rin->bindParam(':sessionID',$sessionID);
         $rin->execute();
 
         //use RIN to get RCSID
-        $result = $conn->prepare("SELECT `rcsID` FROM `users` WHERE `rin` = '$rin'");
+        $result = $conn->prepare("SELECT rcsID FROM users WHERE rin = :rin");
+        $result->bindParam(':rin',$rin);
         $result->execute();
 
         //return value
@@ -25,11 +27,13 @@ function getName(){
         $sessionID = $_COOKIE['FORGE-SESSION'];
         $conn = dbConnect();
         //grab the UserID (RIN) from the Session Data
-        $rin = $conn->prepare("SELECT `UserID` FROM `Sessions` WHERE `sessionID` = '$sessionID'");
+        $rin = $conn->prepare("SELECT UserID FROM Sessions WHERE sessionID = :sessionID");
+        $rin->bindParam(':sessionID',$sessionID);
         $rin->execute();
 
         //use RIN to get firstName
-        $result = $conn->prepare("SELECT `firstName` FROM `users` WHERE `rin` = '$rin'");
+        $result = $conn->prepare("SELECT firstName FROM users WHERE rin = :rin");
+        $result->bindParam(':rin',$rin);
         $result->execute();
 
         //return value
@@ -44,11 +48,13 @@ function getEmail(){
         $sessionID = $_COOKIE['FORGE-SESSION'];
         $conn = dbConnect();
         //grab the UserID (RIN) from the Session Data
-        $rin = $conn->prepare("SELECT `UserID` FROM `Sessions` WHERE `sessionID` = '$sessionID'");
+        $rin = $conn->prepare("SELECT UserID FROM Sessions WHERE sessionID = :sessionID");
+        $rin->bindParam(':sessionID',$sessionID);
         $rin->execute();
 
         //use RIN to get Email
-        $result = $conn->prepare("SELECT `email` FROM `users` WHERE `rin` = '$rin'");
+        $result = $conn->prepare("SELECT email FROM users WHERE rin = :rin");
+        $result->bindParam(':rin',$rin);
         $result->execute();
 
         //return value
@@ -63,11 +69,13 @@ function getPerms(){
         $sessionID = $_COOKIE['FORGE-SESSION'];
         $conn = dbConnect();
         //grab the UserID (RIN) from the Session Data
-        $rin = $conn->prepare("SELECT `UserID` FROM `Sessions` WHERE `sessionID` = '$sessionID'");
+        $rin = $conn->prepare("SELECT UserID FROM Sessions WHERE sessionID = :sessionID");
+        $rin->bindParam(':sessionID',$sessionID);
         $rin->execute();
 
         //use RIN to get Perms (Type)
-        $result = $conn->prepare("SELECT `type` FROM `users` WHERE `rin` = '$rin'");
+        $result = $conn->prepare("SELECT type FROM users WHERE rin = :rin");
+        $result->bindParam(':rin',$rin);
         $result->execute();
 
         //return value
@@ -82,11 +90,13 @@ function getUses(){
         $sessionID = $_COOKIE['FORGE-SESSION'];
         $conn = dbConnect();
         //grab the UserID (RIN) from the Session Data
-        $rin = $conn->prepare("SELECT `UserID` FROM `Sessions` WHERE `sessionID` = '$sessionID'");
+        $rin = $conn->prepare("SELECT UserID FROM Sessions WHERE sessionID = :sessionID");
+        $rin->bindParam(':sessionID',$sessionID);
         $rin->execute();
 
         //use RIN to get 10 most recent Projects in reverse chronological order
-        $result = $conn->prepare("SELECT * FROM `projects` WHERE `userID` = '$rin' LIMIT 10 ORDER BY `startTime` DESC;");
+        $result = $conn->prepare("SELECT * FROM projects WHERE userID = :rin ORDER BY startTime DESC LIMIT 10");
+        $result->bindParam(':rin',$rin);
         $result->execute();
 
         //return value
