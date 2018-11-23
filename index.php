@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <?php include 'nav_bar.php'?>
+  <?php include 'nav_bar.php';?>
   <div class="py-5 text-center bg-primary filter-dark cover" style="background-image: url('homePagePhotos/CII2037.JPG');background-size:cover;background-position:center center;">
   <div class="container">
     <div class="row">
