@@ -1,5 +1,5 @@
-<?php include 'style.php';?>
-<?php include 'controllers/functions.php';?>
+<?php include_once 'style.php';?>
+<?php include_once 'controllers/functions.php';?>
 <nav class="navbar navbar-expand-md bg-secondary navbar-light">
 <div class="container">
   <a class="navbar-brand" href="#">
