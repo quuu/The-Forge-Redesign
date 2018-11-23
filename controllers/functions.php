@@ -48,6 +48,30 @@ function getName(){
     }
 }
 
+function getlastName(){
+    if(isset($_COOKIE['FORGE-SESSION'])){
+        $sessionID = $_COOKIE['FORGE-SESSION'];
+        $conn = dbConnect();
+        //grab the UserID (RIN) from the Session Data
+        $rin = $conn->prepare("SELECT UserID FROM Sessions WHERE sessionID = :sessionID");
+        $rin->bindParam(':sessionID',$sessionID);
+        $rin->execute();
+        $rin_result = $rin->fetchColumn();
+
+        //use RIN to get firstName
+        $result = $conn->prepare("SELECT lastName FROM users WHERE rin = :rin");
+        $result->bindParam(':rin',$rin_result);
+        $result->execute();
+        $ret_result = $result->fetchColumn();
+
+        //return value
+        //var_dump($ret_result);
+        return $ret_result;
+    }else{
+        return 404;
+    }
+}
+
 function getEmail(){
     if(isset($_COOKIE['FORGE-SESSION'])){
         $sessionID = $_COOKIE['FORGE-SESSION'];
