@@ -31,7 +31,7 @@
     </div>
   </div>
   </div>
-  <div class="bg-secondary">
+  <div class="bg-light">
   <div class="container">
     <div class="row">
       <div class="col-md-6 p-4">
@@ -72,129 +72,8 @@
     </div>
   </div>
   </div>
-  <div class="py-2">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="text-center">Our Equipment</h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <p class="">All of our equipment is free for all members and membership is available for all RPI students. Take a look at what we have to offer.</p>
-      </div>
-    </div>
-  </div>
-  <div class="container bg-secondary">
-    <div class="row mb-5">
-      <div class="col-md-3" style="">
-        <h2 class="text-primary">3D Printers</h2>
-          <a class="btn btn-primary" href="status_bars.php">Machine View<br></a>
-        <p class="">We offer a variety of 3D printing options. Each with their own pros and cons. &nbsp;PLA, ABS, SLA, and even flexible filament.</p>
-      </div>
-      <div class="col-md-9 align-self-center" style="">
-        <div class="row">
-          <div class="col-md-4 p-0" style=" ;">
-            <div class="card">
-              <img class="card-img" src="homePagePhotos/z18.jpg" alt="Card image">
-              <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                <h2 class="text-secondary">Makerbot Z18</h2>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 p-0" style=" ;">
-            <div class="card">
-              <img class="card-img" src="homePagePhotos/taz5.jpg" alt="Card image">
-              <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                <h2 class="text-secondary">Tazbot 5</h2>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 p-0" style=" ;">
-            <div class="card">
-              <img class="card-img" src="homePagePhotos/tazMini.jpg" alt="Card image">
-              <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                <h2 class="text-secondary">Tazbot Mini</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 p-0" style=" ;">
-            <div class="card">
-              <img class="card-img" src="homePagePhotos/flexyTaz.jpg" alt="Card image">
-              <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                <h2 class="text-secondary">Tazbot Flexy</h2>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 p-0" style=" ;">
-            <div class="card">
-              <img class="card-img" src="homePagePhotos/formlabs.jpg" alt="Card image">
-              <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                <h2 class="text-secondary">Formlabs</h2>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 p-0" style=" ;">
-            <div class="card">
-              <img class="card-img" src="homePagePhotos/mini.jpg" alt="Card image">
-              <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                <h2 class="text-secondary">Makerbot Mini</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container bg-secondary">
-    <div class="row mb-5">
-      <div class="col-md-7">
-        <h2 class="text-primary">Laser Cutter</h2>
-        <p class="">We can laser cut or engrave anything short of metal and excluding materials creating known carcinogens (PVC and MDF). &nbsp;Our software takes ".dxf" files but volunteers can also help you engrave or cut from any image file</p>
-      </div>
-      <div class="col-md-5 align-self-center p-0">
-        <img class="img-fluid d-block w-100" src="homePagePhotos/laserCutter.jpg"> </div>
-    </div>
-  </div>
-  <div class="container bg-secondary">
-    <div class="row mb-5">
-      <div class="col-md-7">
-        <h2 class="text-primary">3D Scanner</h2>
-        <p class="">Have an object you want a digital, 3D copy of? If its small enough to fit on our scanner you can get a high quality 3D scan. Just ask one of our volunteers and wear the infared protection glasses.</p>
-      </div>
-      <div class="col-md-5 align-self-center p-0">
-        <img class="img-fluid d-block w-100" src="homePagePhotos/3dScanner.jpg"> </div>
-    </div>
-  </div>
-  <div class="container bg-secondary">
-    <div class="row mb-5">
-      <div class="col-md-4">
-        <h2 class="text-primary">Vinyl Cutter and Embroidery</h2>
-        <p class="">Our newly added machines include an Expert Pro Vinyl Cutter and a Brother Sewing and Embroidery Machine</p>
-      </div>
-      <div class="col-md-4 align-self-center p-0">
-        <img class="img-fluid d-block w-100" src="homePagePhotos/vinylCutter.jpg"> </div>
-      <div class="col-md-4 align-self-center p-0">
-        <img class="img-fluid d-block w-100" src="homePagePhotos/embroideryMachine.jpg"> </div>
-    </div>
-  </div>
-  </div>
-  <div class="py-5 bg-secondary">
-  <div class="container">
-    <div class="row">
-      <div class="align-self-center p-5 col-md-6">
-        <h1 class="mb-4">Gallery</h1>
-        <p class="mb-5">Take a look at some projects fellow students have worked on as well as previous hosted events.</p>
-        <a class="btn btn-lg btn-outline-dark" href="gallery.php">View the gallery</a>
-      </div>
-      <div class="col-md-6 p-0">
-        <img class="img-fluid d-block" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg"> </div>
-    </div>
-  </div>
-  </div>
   <?php include 'footer.php';?>
+  <script src="js/index.js"></script>
 </body>
 
 </html>
