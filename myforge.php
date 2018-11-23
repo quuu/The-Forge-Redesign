@@ -5,6 +5,8 @@
     <?php include_once 'style.php';?>
     <?php include_once 'controllers/functions.php';?>
     <?php include_once 'controllers/auth_controller.php';?>
+    <?php include_once "controllers/db_connector.php";?>
+    <?php include_once 'scripts/table_generation.php';?>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
@@ -25,6 +27,7 @@
 
     //generate content based on permission tiers
     if($user_type == "TA" || $user_type == "admin" || $user_type == "volunteer" || $user_type == "user"){
+        generateSpecificTable("","");
 
     }else if ($user_type == "admin" || $user_type == "volunteer" || $user_type == "user"){
 
