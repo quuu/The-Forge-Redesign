@@ -36,7 +36,7 @@ include "controllers/print_form_controller.php";
 
 
                   <div class="form-group">
-                    <label for="amount" id="amountlabel">Amount of plastic (g)</label>
+                    <label for="amount" id="amountlabel">Amount of plastic (g) (0 IF USING YOUR OWN MATERIAL)</label>
                     <input type="text" class="form-control required" id="plasticamount" name="amount"/>
                     <small id="printprice" class="form-text text-muted ml-1 required"></small>
                   </div>
