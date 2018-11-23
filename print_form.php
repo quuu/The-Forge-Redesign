@@ -29,7 +29,7 @@ include "controllers/print_form_controller.php";
                 <div id="plasticinfo">
                   <div class="form-group">
                     <label for="plastic" id="plasticlabel">Plastic Type:</label>
-                    <select name="plastic" id="plastictype" required>
+                    <select name="plastic" id="plastictype" class="required">
                       <?php generatePlasticsDropDown() ?>
                     </select>
                   </div>
@@ -37,28 +37,28 @@ include "controllers/print_form_controller.php";
 
                   <div class="form-group">
                     <label for="amount" id="amountlabel">Amount of plastic (g)</label>
-                    <input type="text" class="form-control" id="plasticamount" name="amount" required/>
-                    <small id="printprice" class="form-text text-muted ml-1"></small>
+                    <input type="text" class="form-control required" id="plasticamount" name="amount"/>
+                    <small id="printprice" class="form-text text-muted ml-1 required"></small>
                   </div>
 
                   <div class="form-group">
                     <label for="brand" id="brandlabel">Plastic Brand</label>
-                    <input type="text" class="form-control" name="brand" id="brand" required/>
+                    <input type="text" class="form-control required" name="brand" id="brand"/>
                   </div>
 
                   <div class="form-group">
                     <label for="temp" id="templabel">Print temperature</label>
-                    <input type="text" class="form-control" name="temp" id="temp" required/>
+                    <input type="text" class="form-control required" name="temp" id="temp"/>
                   </div>
 
                   <div class="form-group">
                     <label for="color" id="colorlabel">Color of Plastic</label>
-                    <input type="text" class="form-control" name="color" id="color" required/>
+                    <input type="text" class="form-control required" name="color" id="color"/>
                   </div>
 
                   <div class="form-group">
                     <label for="time">Estimate time to completion (in HH format):</label>
-                    <input type="number" class="form-control" name="time" min="1" max="1000" required/>
+                    <input type="number" class="form-control required" name="time" min="1" max="1000"/>
                   </div>
                 </div>
 
@@ -79,7 +79,7 @@ include "controllers/print_form_controller.php";
 
 
                   <div class="form-group">
-                    <input type="checkbox" name="reprintpolicy" value="agree" required/>
+                    <input type="checkbox" name="reprintpolicy" value="agree" class="required"/>
                     <label for="reprintpolicy"> I agree to the reprint policy.</label>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ include "controllers/print_form_controller.php";
 
                 <div class="form-group">
                   <label for="initials" id="initialslabel">Initials</label>
-                  <input type="text" class="form-control" name="initials" id="initials" required/>
+                  <input type="text" class="form-control required" name="initials" id="initials"/>
                   <small id="initialssmall" class="form-text text-muted ml-1">By initialing here, you agree to pay the charge shown above.</small>
                 </div>
 
