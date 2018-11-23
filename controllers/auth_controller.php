@@ -1,5 +1,5 @@
 <?php
-include "db_connector.php";
+require_once "db_connector.php";
 //Takes care of redirecting user if their session is expired
 if(isset($_COOKIE['FORGE-SESSION'])){
   //DB connection initialized
