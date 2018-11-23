@@ -63,7 +63,7 @@ include "controllers/print_form_controller.php";
                 </div>
 
                 <div class="form-group">
-                  <input type="checkbox" name="forclass" value="1" required/>
+                  <input type="checkbox" name="forclass" value="1"/>
                   <label for="forclass">This print is for a class</label>
                 </div>
 
