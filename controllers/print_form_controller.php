@@ -7,8 +7,8 @@ if(isset($_POST['machine'])){
     $stmt->bindParam(":sessionID", $_COOKIE['FORGE-SESSION']);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    $stmt = $conn->prepare("INSERT INTO projects(plastic, amount, payment, machine, forClass, startTime, eta, endTime, success, timesFailed, plasticBrand, userID, userInit) 
-    VALUES (:plastic, :amount, :payment, :machine, :forClass, :startTime, :eta, NULL, NULL, 0, :brand, :ID, :initials);");
+    $stmt = $conn->prepare("INSERT INTO projects(plastic, amount, plasticColor, plasticBrand, printTemp, payment, machine, forClass, startTime, eta, endTime, success, timesFailed, userID, userInitials) 
+    VALUES (:plastc, :amount, :color, :brand, :temp, :payment, :machine, :forClass, :startTime, :eta, NULL, NULL, 0, :ID, :initials);");
     date_default_timezone_set("America/New_York");
     $start = date("Y-m-d H:i:s",time());
     if(isset($_POST['time'])){
@@ -22,6 +22,9 @@ if(isset($_POST['machine'])){
         [
             'plastic' => $plasticInfo['type'],
             'amount' => $_POST['amount'],
+            'color' => $_POST['color'],
+            'brand' => $_POST['brand'],
+            'temp' => $_POST['temp'],
             'payment' => $price,
             'machine' => $_POST['machine'],
             'forClass' => $_POST['forclass'],
@@ -32,7 +35,10 @@ if(isset($_POST['machine'])){
             'initials' => $_POST['initials']
         ]
     );
-
+    $stmt = $conn->prepare("UPDATE hardware SET inUse=1 WHERE machineName=:machine;");
+    $stmt->bindParam(":machine", $_POST['machine']);
+    $stmt->execute();
+    exit();
 }
 
 // Polls the database for the machines that are not currently in use.
