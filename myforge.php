@@ -26,15 +26,50 @@
     echo "<h1 class=\"card-title\">Welcome Back [$user_type] $last_name</h1>";
 
     //generate content based on permission tiers
-    if($user_type == "TA" || $user_type == "admin" || $user_type == "volunteer" || $user_type == "user"){
+    if($user_type == "user"){
         generateSpecificTable("","");
+        echo "<div>";
+            echo "<h3>Innovation station</h3>";
+            echo "<i>What will you create today?</i>";
+            echo "<a role=\"button\" class=\"btn btn-dark btn-lg\" href='print_form.php'>Use a Machine</a>";
+        echo "</div>";
 
-    }else if ($user_type == "admin" || $user_type == "volunteer" || $user_type == "user"){
-
-    } else if ($user_type == "volunteer" || $user_type == "user"){
-
-    } else if ($user_type == "user"){
-
+    }else if ($user_type == "volunteer"){
+        generateSpecificTable("","");
+        generateTotalTable("","");
+        echo "<div>";
+            echo "<h3>Innovation station</h3>";
+            echo "<i>What will you create today?</i>";
+            echo "<a role=\"button\" class=\"btn btn-dark btn-lg\" href='print_form.php'>Use a Machine</a>";
+            echo "<a role=\"button\" class=\"btn btn-success btn-lg\" href='scripts/free_machine.php'>Free a Machine</a>";
+            echo "<button type=\"button\" class=\"btn btn-danger btn-lg\">Send Failed Print Email</button>";//display a pop-up asking for failed machine, then pull user info and get email to send
+        echo "</div>";
+    } else if ($user_type == "admin"){
+        generateSpecificTable("","");
+        generateTotalTable("","");
+        echo "<div>";
+            echo "<h3>Admin Panel</h3>";
+            echo "<a role=\"button\" class=\"btn btn-dark btn-lg\" href='print_form.php'>Use a Machine</a>";
+            echo "<a role=\"button\" class=\"btn btn-success btn-lg\" href='scripts/free_machine.php'>Free a Machine</a>";
+            echo "<button type=\"button\" class=\"btn btn-danger btn-lg\">Send Failed Print Email</button>";//display a pop-up asking for failed machine, then pull user info and get email to send
+            echo "<a role=\"button\" class=\"btn btn-info btn-lg\" href='create_account.php'>Create Account</a>";
+            echo "<a role=\"button\" class=\"btn btn-info btn-lg\" href='edit_user.php'>Manage Member</a>";
+            echo "<a role=\"button\" class=\"btn btn-success btn-lg\" href='reports.php'>Generate Reports</a>"; //Heuristic Report as .xls maybe income stmt?
+        echo "</div>";
+    } else if ($user_type == "TA"){
+        generateSpecificTable("","");
+        generateTotalTable("","");
+        echo "<div>";
+            echo "<h3>Super Admin Panel</h3>";
+            echo "<a role=\"button\" class=\"btn btn-dark btn-lg\" href='print_form.php'>Use a Machine</a>";
+            echo "<a role=\"button\" class=\"btn btn-success btn-lg\" href='scripts/free_machine.php'>Free a Machine</a>";
+            echo "<button type=\"button\" class=\"btn btn-danger btn-lg\">Send Failed Print Email</button>";//display a pop-up asking for failed machine, then pull user info and get email to send
+            echo "<a role=\"button\" class=\"btn btn-info btn-lg\" href='create_account.php'>Create Account</a>";
+            echo "<a role=\"button\" class=\"btn btn-info btn-lg\" href='edit_user.php'>Manage Member</a>";
+            echo "<a role=\"button\" class=\"btn btn-success btn-lg\" href='reports.php'>Generate Reports</a>"; //Heuristic Report as .xls maybe income stmt?
+            echo "<button type=\"button\" class=\"btn btn-danger btn-lg\">End Semester</button>"; //Needs a confirm box as this dumps the user Table (Excluding Super Admin Users) and Projects also runs report generation
+            echo "<a role=\"button\" class=\"btn btn-danger btn-lg\" href='edit_admin.php'>Remove Admin</a>";
+        echo "</div>";
     }
 
 ?>
