@@ -1,7 +1,4 @@
 <?php
-//include_once "controllers/db_connector.php";
-//include_once 'controllers/functions.php';
-
 function generateSpecificTable($class, $id){//given a user, generate a recent project table
     if(isset($_COOKIE['FORGE-SESSION'])){
         $sessionID = $_COOKIE['FORGE-SESSION'];
@@ -201,7 +198,7 @@ function generateTotalTable($class, $id){//given an admin user, generate a works
         echo"<tr>";
             echo"<th scope=\"row\">Top 5 Machines:</th>";
             echo"<td>";
-            $p_mach = stringafy($popular_machines,"machines");
+            $p_mach = stringify($popular_machines,"machines");
             echo $p_mach;
             echo"</td>";
         echo"</tr>";
@@ -212,7 +209,7 @@ function generateTotalTable($class, $id){//given an admin user, generate a works
         echo"<tr>";
             echo"<th scope=\"row\">Top 5 Colors:</th>";
             echo"<td>";
-            $p_col = stringafy($popular_colors,"colors");
+            $p_col = stringify($popular_colors,"colors");
             echo $p_col;
             echo"</td>";
         echo"</tr>";
@@ -264,7 +261,7 @@ function getPrintStats($action){
     return 404;
 }
 
-function stringafy($array,$type){
+function stringify($array,$type){
     $ret_str = "";
     $numItems = count($array);
     $count = 1;
