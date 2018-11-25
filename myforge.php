@@ -54,7 +54,9 @@
             echo "<button type=\"button\" class=\"btn btn-danger btn-lg\">Send Failed Print Email</button>";//display a pop-up asking for failed machine, then pull user info and get email to send
             echo "<a role=\"button\" class=\"btn btn-info btn-lg\" href='create_account.php'>Create Account</a>";
             echo "<a role=\"button\" class=\"btn btn-info btn-lg\" href='edit_user.php'>Manage Member</a>";
-            echo "<a role=\"button\" class=\"btn btn-success btn-lg\" href='reports.php'>Generate Reports</a>"; //Heuristic Report as .xls maybe income stmt?
+            echo "<form action=\"reports.php\" method=\"post\" target=\"_blank\">";
+                echo "<input type=\"submit\" class=\"btn btn-success btn-lg\" value = \"Open Script\">Generate Reports</input>"; //Heuristic Reports as .xls
+            echo "</form>";
         echo "</div>";
     } else if ($user_type == "TA"){
         generateSpecificTable("","");
