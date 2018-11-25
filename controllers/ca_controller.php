@@ -28,7 +28,7 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
       exit();
     }
     $stmt = $conn->prepare('INSERT INTO Users (FirstName,LastName,Email,RIN,rcsID,Password, type, gender, major, outstandingBalance)
-    VALUES (:firstname,:lastname,:email,:RIN,:rcsID,:Password, "User",:gender,:major,10)');
+    VALUES (:firstname,:lastname,:email,:RIN,:rcsID,:Password, "user",:gender,:major,10)');
     $stmt->bindParam(':firstname',$first);
     $stmt->bindParam(':lastname',$last);
     $stmt->bindParam(':email',$email);

@@ -26,7 +26,7 @@
     echo "<h1 class=\"card-title\">Welcome Back [$user_type] $last_name</h1>";
 
     //generate content based on permission tiers
-    if($user_type == "User"){
+    if($user_type == "user"){
         generateSpecificTable("","");
         echo "<div>";
             echo "<h3>Innovation station</h3>";
