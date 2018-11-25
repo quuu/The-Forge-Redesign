@@ -61,7 +61,6 @@ if(isset($_POST['machine'])){
     exit();
 }
 
-
 // Polls the database for the machines that are not currently in use.
 function generateMachineDropDown(){
     $connection = dbconnect();

@@ -1,19 +1,23 @@
 <?php
 
 require_once 'vendor/autoload.php';
-include_once 'controllers/functions.php';
-include_once "controllers/db_connector.php";
+require_once 'controllers/functions.php';
+require_once "controllers/db_connector.php";
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 /*
+ * =========================================================
+ * example spreadsheet creation and useage
+ * Credit: https://phpspreadsheet.readthedocs.io/en/develop/
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
 $sheet->setCellValue('A1', 'Hello World !');
 
 $writer = new Xlsx($spreadsheet);
 $writer->save('hello world.xlsx');
+ * ==========================================================
 */
 
 //Pull All needed info from the database

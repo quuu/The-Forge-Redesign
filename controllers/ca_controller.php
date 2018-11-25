@@ -8,11 +8,9 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
     $rin = $_POST['rin'];
     $rcsID = $_POST['rcsID'];
     $pass = password_hash($_POST['password'],PASSWORD_DEFAULT);
-    $gender = "";
     $gender_clean= "";
     if(isset($_POST['gender'])){
-        $gender = $_POST['gender'];
-        $gender_clean = strtolower($gender);
+        $gender_clean = strtolower($_POST['gender']);
     }
     $major = $_POST['major'];
     $major_clean = strtolower($major);
