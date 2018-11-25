@@ -8,6 +8,13 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
     $rin = $_POST['rin'];
     $rcsID = $_POST['rcsID'];
     $pass = password_hash($_POST['password'],PASSWORD_DEFAULT);
+    $gender_clean= "";
+    if(isset($_POST['gender'])){
+        $gender_clean = strtolower($_POST['gender']);
+    }
+    $major = $_POST['major'];
+    $major_clean = strtolower($major);
+
 
     $conn = dbConnect();
     //Checks to see if there are users in the database with the same rcsID
@@ -20,14 +27,16 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
       echo "<script type='text/javascript'>alert('That rcsID is unavailable!');</script>";
       exit();
     }
-    $stmt = $conn->prepare('INSERT INTO Users (FirstName,LastName,Email,RIN,rcsID,Password, type)
-    VALUES (:firstname,:lastname,:email,:RIN,:rcsID,:Password, "User")');
+    $stmt = $conn->prepare('INSERT INTO Users (FirstName,LastName,Email,RIN,rcsID,Password, type, gender, major, outstandingBalance)
+    VALUES (:firstname,:lastname,:email,:RIN,:rcsID,:Password, "user",:gender,:major,10)');
     $stmt->bindParam(':firstname',$first);
     $stmt->bindParam(':lastname',$last);
     $stmt->bindParam(':email',$email);
     $stmt->bindParam(':RIN',$rin);
     $stmt->bindParam(':rcsID',$rcsID);
     $stmt->bindParam(':Password',$pass);
+    $stmt->bindParam(':gender',$gender_clean);
+    $stmt->bindParam(':major',$major_clean);
     $stmt->execute();
     exit();
 }else{

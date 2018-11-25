@@ -52,6 +52,12 @@ if(isset($_POST['machine'])){
     $stmt = $conn->prepare("UPDATE hardware SET inUse=1 WHERE machineName=:machine;");
     $stmt->bindParam(":machine", $_POST['machine']);
     $stmt->execute();
+
+    //Updates Outstanding Balance in Users Table
+    $stmt = $conn->prepare("UPDATE users SET `outstandingBalance` = `outstandingBalance` + :price WHERE `rin` = :rin");
+    $stmt->bindParam(":price", $paramaterArray['payment']);
+    $stmt->bindParam(":rin", $paramaterArray['ID']);
+    $stmt->execute();
     exit();
 }
 
