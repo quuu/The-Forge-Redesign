@@ -43,7 +43,7 @@
                   ?>
               </i>
           </button>
-          <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuLink\">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <?php
             if(isset($_COOKIE['FORGE-SESSION'])){
                     echo "<a class=\"dropdown-item\" href=\"login.php\">Login </a>";
