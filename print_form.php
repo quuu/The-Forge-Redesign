@@ -12,7 +12,7 @@ include "controllers/print_form_controller.php";
     <?php include 'style.php'?>
     <?php include 'scripts.php'?>
 </head>
-<body>
+<body class="bg-secondary">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-9 mx-auto">

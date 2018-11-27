@@ -18,7 +18,7 @@
     <title>The Forge @ RPI</title>
 </head>
 
-<body>
+<body class="bg-secondary">
 <?php include_once 'nav_bar.php';?>
 <?php
     $user_type = getPerms();
