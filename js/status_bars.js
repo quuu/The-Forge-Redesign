@@ -59,7 +59,7 @@ function status_bars(){
                 if(typeof machines[i] !== "undefined"){
 
                     //appending machine name
-                    $('#statuses').append("<p class=\"py-0 my-0\" id=\"" +machines[i]['machineName']+ "\"> Machine Name: "  +machines[i]['machineName']+"</p>");
+                    $('#statuses').append("<p class=\"py-0 my-0\" id=\"" +machines[i]['machineName']+ "\">" + machines[i]['machineName']+"</p>");
 
                     //display "machine out of order" status bar
                     if(machines[i]['status']==0){
