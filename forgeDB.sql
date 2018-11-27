@@ -12,7 +12,7 @@ CREATE TABLE `projects` (
   `machine` varchar(50) NOT NULL,
   `forClass` BOOLEAN,
   `startTime` DATETIME NOT NULL,
-  `eta` DATETIME NOT NULL,
+  `eta` DATETIME,
   `endTime` DATETIME,
   `success` BOOLEAN,
   `timesFailed` int,
