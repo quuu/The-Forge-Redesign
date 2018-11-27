@@ -7,7 +7,7 @@
     <title>Create Account</title>
   </head>
 
-  <body>
+  <body class="bg-secondary">
     <?php include 'nav_bar.php'?>
     <!-- <h1>Create Account</h1>
     <div class="create">
