@@ -27,7 +27,7 @@
                   </div>
 
                   <div class="text-center">
-                    <button class="btn  btn-primary btn-clock text-uppercase" type="submit">Sign in</button>
+                    <button class="btn btn-primary btn-clock text-uppercase" type="submit">Sign in</button>
                   </div>
                 </form>
                 </div>

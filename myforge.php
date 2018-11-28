@@ -2,11 +2,11 @@
 <html class="no-js" lang="">
 
 <head>
-    <?php include_once 'style.php';?>
     <?php include_once 'controllers/functions.php';?>
     <?php include_once 'controllers/auth_controller.php';?>
     <?php include_once "controllers/db_connector.php";?>
     <?php include_once 'scripts/table_generation.php';?>
+    <?php include_once 'style.php';?>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
@@ -20,66 +20,139 @@
 
 <body class="bg-secondary">
 <?php include_once 'nav_bar.php';?>
-<?php
+<div class="container">
+  <?php
     $user_type = getPerms();
+    $first_name = getName();
     $last_name = getlastName();
-    echo "<h1 class=\"card-title\">Welcome Back [$user_type] $last_name</h1>";
-    //generate content based on permission tiers
+    echo "<div class='container'>
+      <div class='row'>
+        <div class='col-md-12'>
+          <h1 class='text-center pt-3 display-4 text-primary'>$first_name $last_name's Forge</h1>";
+
+          if ($user_type == "user"){
+            echo"<p class='text-center'>Access information regarding your projects and/or start a new print.</p>";
+          } else if($user_type == "volunteer"){
+            echo"<p class='text-center'>Access information regarding your own projects and statistics of all projects. Start a new print, free up a machine, or send a failed print e-mail.</p>";
+          } else if($user_type == "admin"){
+            echo"<p class='text-center'>Acess the admin panel and/or information regarding your own projects and statistics of all projects.</p>";
+          } else if($user_type == "TA"){
+            echo"<p class='text-center'>Access the super admin panel and/or information regarding your own projects and statistics of all projects.</p>";
+          }
+
+        echo "</div>
+      </div>
+    </div>";
+
     if($user_type == "user"){
-        generateSpecificTable("","");
-        echo "<div>";
-            echo "<h3>Innovation station</h3>";
-            echo "<i>What will you create today?</i>";
-            echo "<a role=\"button\" class=\"btn btn-dark btn-lg\" href='print_form.php'>Use a Machine</a>";
-        echo "</div>";
+      echo "<div class='row'>
+        <div class='col-xs-12 col-sm-8 col-md-6 mx-auto'>
+          <div class='card shadow-lg my-3'>
+            <div class='card-body'>
+            <h1 class='card-title text-center'>Innovation Station</h1>
+            <p class='text-center'>What will you create today?</p>";
+            echo "<div class='row py-2'>";
+            echo "<div class='col-md-12 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
+            echo "</div>
+              </div>
+            </div>
+          </div>
+        </div>";
+    }else if ($user_type == 'volunteer'){
+      echo "<div class='row'>
+        <div class='col-sm-12 mx-auto'>
+          <div class='card shadow-lg my-3'>
+            <div class='card-body'>
+            <h1 class='card-title text-center'>Innovation Station</h1>
+            <p class='text-center'>What will you create today?</p>";
+            echo "<div class='row py-2'>";
+            echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
+            echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='scripts/free_machine.php'>Free a Machine</a></div>";
+            //display a pop-up asking for failed machine, then pull user info and get email to send
+            echo "<div class='col-md-4 text-center'><button type=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\">Failed Print Email</button></div>";
+            echo "</div>
+            </div>
+          </div>
+        </div>
+      </div>";
+    }else if ($user_type == "admin"){
+      echo "<div class='row'>
+        <div class='col-sm-12 mx-auto'>
+          <div class='card shadow-lg my-3'>
+            <div class='card-body'>
+            <h1 class='card-title text-center'>Admin Panel</h1>";
+            echo "<div class='row py-2'>";
+              echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
+              echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='scripts/free_machine.php'>Free a Machine</a></div>";
+              // Heuristic Report as .xls
+              echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='reports.php'>Download Reports</a></div>";
 
-    }else if ($user_type == "volunteer"){
-        generateSpecificTable("","");
-        generateTotalTable("","");
-        echo "<div>";
-            echo "<h3>Innovation station</h3>";
-            echo "<i>What will you create today?</i>";
-            echo "<a role=\"button\" class=\"btn btn-dark btn-lg\" href='print_form.php'>Use a Machine</a>";
-            echo "<a role=\"button\" class=\"btn btn-success btn-lg\" href='scripts/free_machine.php'>Free a Machine</a>";
+            echo "</div>";
+            echo "<div class ='row py-2'>";
+              echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-warning btn-clock text-uppercase fixed-btn-size\" href='create_account.php'>Create Account</a></div>";
+              echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-warning btn-clock text-uppercase fixed-btn-size\" href='edit_user.php'>Edit Account</a></div>";
+              //display a pop-up asking for failed machine, then pull user info and get email to send
+              echo "<div class='col-md-4 text-center'><button type=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\">Failed Print Email</button></div>";
+              echo "</div>
+        </div>
+      </div>
+    </div>
+  </div>";
+    }else if ($user_type == "TA"){
+      echo "<div class='row'>
+        <div class='col-sm-12 mx-auto'>
+          <div class='card shadow-lg my-3'>
+            <div class='card-body'>
+            <h1 class='card-title text-center'>Super Admin Panel</h1>";
+            echo "<div class='row py-2'>";
+            echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
+            echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='scripts/free_machine.php'>Free a Machine</a></div>";
+            // Heuristic Report as .xls
+            echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='reports.php'>Download Reports</a></div>";
+            echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-warning btn-clock text-uppercase fixed-btn-size\" href='create_account.php'>Create Account</a></div>";
+            echo "</div>";
+            echo "<div class='row py-2'>";
+            echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-warning btn-clock text-uppercase fixed-btn-size\" href='edit_user.php'>Edit Account</a></div>";
             //display a pop-up asking for failed machine, then pull user info and get email to send
-            echo "<button type=\"button\" class=\"btn btn-danger btn-lg\">Send Failed Print Email</button>";
-        echo "</div>";
-    } else if ($user_type == "admin"){
-        generateSpecificTable("","");
-        generateTotalTable("","");
-        echo "<div>";
-            echo "<h3>Admin Panel</h3>";
-            echo "<a role=\"button\" class=\"btn btn-dark btn-lg\" href='print_form.php'>Use a Machine</a>";
-            echo "<a role=\"button\" class=\"btn btn-success btn-lg\" href='scripts/free_machine.php'>Free a Machine</a>";
-            //display a pop-up asking for failed machine, then pull user info and get email to send
-            echo "<button type=\"button\" class=\"btn btn-danger btn-lg\">Send Failed Print Email</button>";
-            echo "<a role=\"button\" class=\"btn btn-info btn-lg\" href='create_account.php'>Create Account</a>";
-            echo "<a role=\"button\" class=\"btn btn-info btn-lg\" href='edit_user.php'>Manage Member</a>";
-            echo "<form action=\"reports.php\" method=\"post\" target=\"_blank\">";
-                //Heuristic Reports as .xls
-                echo "<input type=\"submit\" class=\"btn btn-success btn-lg\" value = \"Open Script\">Generate Reports</input>";
-            echo "</form>";
-        echo "</div>";
-    } else if ($user_type == "TA"){
-        generateSpecificTable("","");
-        generateTotalTable("","");
-        echo "<div>";
-            echo "<h3>Super Admin Panel</h3>";
-            echo "<a role=\"button\" class=\"btn btn-dark btn-lg\" href='print_form.php'>Use a Machine</a>";
-            echo "<a role=\"button\" class=\"btn btn-success btn-lg\" href='scripts/free_machine.php'>Free a Machine</a>";
-            //display a pop-up asking for failed machine, then pull user info and get email to send
-            echo "<button type=\"button\" class=\"btn btn-danger btn-lg\">Send Failed Print Email</button>";
-            echo "<a role=\"button\" class=\"btn btn-info btn-lg\" href='create_account.php'>Create Account</a>";
-            echo "<a role=\"button\" class=\"btn btn-info btn-lg\" href='edit_user.php'>Manage Member</a>";
-            //Heuristic Report as .xls
-            echo "<a role=\"button\" class=\"btn btn-success btn-lg\" href='reports.php'>Generate Reports</a>";
+            echo "<div class='col-md-3 text-center'><button type=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\">Failed Print Email</button></div>";
+            echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\" href='edit_admin.php'>Remove Admin</a></div>";
             //Needs a confirm box as this dumps the user Table (Excluding Super Admin Users) and Projects also runs report generation
-            echo "<button type=\"button\" class=\"btn btn-danger btn-lg\">End Semester</button>";
-            echo "<a role=\"button\" class=\"btn btn-danger btn-lg\" href='edit_admin.php'>Remove Admin</a>";
-        echo "</div>";
+            echo "<div class='col-md-3 text-center'><button type=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\">End Semester</button></div>";
+            echo "</div>
+            </div>
+          </div>
+        </div>
+      </div>";
     }
+  ?>
 
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
+      <div class="card shadow-lg my-3">
+        <div class="card-body pb-0">
+        <h1 class="card-title text-center">Projects</h1>
+          <?php generateSpecificTable("",""); ?>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<?php
+    //generate content based on permission tiers
+    if ($user_type == "volunteer" || $user_type == "admin" || $user_type == "TA"){
+      echo "<div class='row'>
+        <div class='col-sm-12 mx-auto'>
+          <div class='card shadow-lg my-3'>
+            <div class='card-body pb-0'>
+            <h1 class='card-title text-center'>Statistics</h1>";
+            generateTotalTable("","");
+            echo "</div>
+          </div>
+        </div>
+      </div>";
+    }
 ?>
-
+</div>
 
 </body>
+</html>
