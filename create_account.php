@@ -73,7 +73,7 @@
                   </div>
 
                   <div class="checkbox">
-                      <label><input type="checkbox" value="true" required>I agree to pay the $10 membership Fee</label>
+                      <label><input type="checkbox" value="true" required>&nbspI agree to pay the $10 membership Fee</label>
                   </div>
 
                   <div class="text-center">

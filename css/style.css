@@ -36,3 +36,15 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     -webkit-appearance: none;
     margin: 0;
 }
+
+.page-title{
+  font-size: 4em;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #f71118;
+}
+
+.fixed-btn-size{
+  width:85%;
+  height:100%;
+  padding:5px;
+}

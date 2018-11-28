@@ -66,6 +66,7 @@ function generateSpecificTable($class, $id){//given a user, generate a recent pr
             $count++; //bump the index
         }
         echo "</tbody>";
+        echo "</table>";
 
     }else if ($ret_result == 404){
         echo "<div class=\"$class\" id=\"$id\"> <h3> Looks like you haven't started any projects yet, get innovating!</h3></div>";
@@ -214,6 +215,7 @@ function generateTotalTable($class, $id){//given an admin user, generate a works
             echo"</td>";
         echo"</tr>";
     echo "</tbody>";
+  echo "</table>";
 }
 
 function getMembers(){
@@ -279,6 +281,3 @@ function stringify($array,$type){
     return $ret_str;
 }
 ?>
-
-
-
