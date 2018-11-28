@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * @param machineReturn - name of function on what to do with success data
  */
 function fetchMachines(machineReturn){
@@ -13,7 +13,7 @@ function fetchMachines(machineReturn){
 };
 
 /**
- * 
+ *
  * @param projectsReturn - name of function on what to do with success data
  */
 function fetchProjects(projectsReturn){
@@ -88,6 +88,7 @@ function updateStatusBars(machines,projects) {
             //variable to hold "[machineName]_percentage"
             var elem = document.getElementById(machines[i]['machineName'] + '_percentage');
 
+
             //display "machine out of order" status bar  
             if (machines[i]['status'] == 0) {
                 elem.setAttribute('class', 'progress-bar-striped bg-danger');
@@ -97,6 +98,7 @@ function updateStatusBars(machines,projects) {
 
             //if machine is able to print
             else {
+
 
                 //currently not in use
                 if (machines[i]['inUse'] == 0) {
@@ -165,11 +167,12 @@ function updateStatusBars(machines,projects) {
         }            
 
     }
+
 }
 
 //populate the webpage with information upon load
 $(document).ready(function(){
     //initial call
     createStatusBars();
-
 });
+

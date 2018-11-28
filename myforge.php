@@ -18,13 +18,12 @@
     <title>The Forge @ RPI</title>
 </head>
 
-<body>
+<body class="bg-secondary">
 <?php include_once 'nav_bar.php';?>
 <?php
     $user_type = getPerms();
     $last_name = getlastName();
     echo "<h1 class=\"card-title\">Welcome Back [$user_type] $last_name</h1>";
-
     //generate content based on permission tiers
     if($user_type == "user"){
         generateSpecificTable("","");

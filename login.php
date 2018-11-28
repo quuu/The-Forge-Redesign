@@ -6,7 +6,7 @@
   <?php include 'style.php';?>
 </head>
 
-<body>
+<body class="bg-secondary">
   <?php include 'nav_bar.php';?>
 
   <div class="container">

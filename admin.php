@@ -5,7 +5,7 @@
   <title>Admin</title>
 </head>
 
-<body>
+<body class="bg-secondary">
   <h1>Admin</h1>
   <div class="form">
       <button><a href="./edit_user.php">Edit User</a></button><br/>
