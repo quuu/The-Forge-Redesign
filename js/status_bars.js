@@ -70,7 +70,13 @@ function createStatusBars(){
             //initial call
             updateStatusBars(machines,projects);
             //repeating call
-            setInterval(function () { updateStatusBars(machines, projects);},3000)
+            setInterval(function () {
+                fetchMachines(function (m) {
+                    fetchProjects(function (p) {
+                       updateStatusBars(m, p);
+                    })
+                })
+            }, 3000)
         }); 
     });
 }
