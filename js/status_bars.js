@@ -134,8 +134,8 @@ function updateStatusBars(machines,projects) {
 
                                 //if current time is AFTER end time
                                 else if (current > eta) {
-                                    elem.setAttribute('class', 'progress-bar-striped bg-success');
-                                    elem.innerHTML = "Print finished already";
+                                    elem.setAttribute('class', 'progress-bar-striped progress-bar-animated bg-success');
+                                    elem.innerHTML = "Print still being worked on";
                                     
                                 }
                                     
