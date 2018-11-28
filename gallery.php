@@ -5,7 +5,7 @@
   <?php include 'style.php';?>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<body class="bg-light">
+<body class="bg-secondary">
   <?php include 'nav_bar.php';?>
   <script src="https://assets.juicer.io/embed.js" type="text/javascript"></script>
   <link href="https://assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
