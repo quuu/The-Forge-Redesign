@@ -15,16 +15,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="text-center">Our Equipment</h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <p class="">All of our equipment is free for all members and membership is available for all RPI students. Take a look at what we have to offer.</p>
+        <h1 class="text-center pt-3 display-4 text-primary">Our Equipment</h1>
+        <p class="text-center">All of our equipment is free for all members and membership is available for all RPI students. Take a look at what we have to offer.</p>
       </div>
     </div>
   </div>
-  <div class="container card bg-secondary mb-3 py-1 shadow-lg">
+  <div class="container card bg-secondary mb-3 py-2 shadow-lg">
     <div class="row">
       <div class="col-md-3">
         <h2 class="text-primary">3D Printers</h2>
