@@ -1,3 +1,18 @@
+<?php
+if(isset($_COOKIE['FORGE-SESSION'])){
+  require_once('controllers/db_connector.php');
+  $conn = dbConnect();
+  $stmt = $conn->prepare("SELECT * FROM sessions WHERE sessionID = :sessID");
+  $stmt->bindParam(":sessID", $_COOKIE['FORGE-SESSION']);
+  $stmt->execute();
+  $session = $stmt->fetch();
+  if($session){
+    header("Location: ./myforge.php");
+  }else{
+    setcookie("FORGE-SESSION",'', time() - 36000,'/');
+  }
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>

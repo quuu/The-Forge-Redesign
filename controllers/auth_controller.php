@@ -34,6 +34,8 @@ if(isset($_COOKIE['FORGE-SESSION'])){
         setcookie("FORGE-SESSION",$sessionID, time() + (24*60*60),'/');
     }
   }else{
+    //Also we wanna delete the cookie because that means something is wrong
+    setcookie("FORGE-SESSION",$sessionID, time() - 36000,'/');
     //If not set correctly, shoot them back to the login page
     header("Location: ./login.php");
     exit();
