@@ -46,7 +46,6 @@
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <?php
             if(isset($_COOKIE['FORGE-SESSION'])){
-                    echo "<a class=\"dropdown-item\" href=\"login.php\">Login </a>";
                     echo "<a class=\"dropdown-item\" href=\"myforge.php\">My Forge</a>";
                     echo "<a class=\"dropdown-item\" href=\"#\">Logout</a>";
             }else{
