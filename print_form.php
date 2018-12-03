@@ -1,5 +1,5 @@
 <?php
-//include "controllers/auth_controller.php";
+include "controllers/auth_controller.php";
 include "controllers/print_form_controller.php";
 ?>
 <!DOCTYPE html>
@@ -12,14 +12,14 @@ include "controllers/print_form_controller.php";
     <?php include 'style.php'?>
     <?php include 'scripts.php'?>
 </head>
-<body>
+<body class="bg-secondary">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-9 mx-auto">
           <div class="card shadow-lg my-5">
             <div class="card-body">
               <h1 class="card-title text-center">Print Job Form</h1>
-              <form action="#" method="POST">
+              <form action="controllers/print_form_controller.php" method="post">
 
                 <label for="machine" id="machinelabel">Machine Type:</label>
                 <select name="machine" id="machine" required>
@@ -36,7 +36,7 @@ include "controllers/print_form_controller.php";
 
 
                   <div class="form-group">
-                    <label for="amount" id="amountlabel">Amount of plastic (g)</label>
+                    <label for="amount" id="amountlabel">Amount of plastic (g) (0 IF USING YOUR OWN MATERIAL OR REPRINT)</label>
                     <input type="text" class="form-control required" id="plasticamount" name="amount"/>
                     <small id="printprice" class="form-text text-muted ml-1 required"></small>
                   </div>
@@ -57,7 +57,7 @@ include "controllers/print_form_controller.php";
                   </div>
 
                   <div class="form-group">
-                    <label for="time">Estimate time to completion (in HH format):</label>
+                    <label for="time">Estimate time to completion (in minutes):</label>
                     <input type="number" class="form-control required" name="time" min="1" max="1000"/>
                   </div>
                 </div>

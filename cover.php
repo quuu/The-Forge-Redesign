@@ -23,7 +23,16 @@
               <a class="nav-link" href="gallery.php">Gallery</a>
               <a class="nav-link" href="news.php">News</a>
               <a class="nav-link" href="contact.php">Contact</a>
-              <a class="nav-link" href="login.php">Login</a>
+              <?php
+              if(isset($_COOKIE['FORGE-SESSION'])){
+                echo "<a class=\"nav-link\" href=\"myforge.php\">My Forge</a>";
+                echo "<a class=\"nav-link\" href=\"#\">Logout</a>";
+              }else{
+                echo "<a class=\"nav-link\" href=\"login.php\">Login </a>";
+
+              }
+              ?>
+
             </nav>
           </div>
         </header>

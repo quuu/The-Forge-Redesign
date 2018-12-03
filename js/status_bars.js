@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * @param machineReturn - name of function on what to do with success data
  */
 function fetchMachines(machineReturn){
@@ -13,7 +13,7 @@ function fetchMachines(machineReturn){
 };
 
 /**
- * 
+ *
  * @param projectsReturn - name of function on what to do with success data
  */
 function fetchProjects(projectsReturn){
@@ -59,11 +59,11 @@ function status_bars(){
                 if(typeof machines[i] !== "undefined"){
 
                     //appending machine name
-                    $('#statuses').append("<p id=\"" +machines[i]['machineName']+ "\"> Machine Name: "  +machines[i]['machineName']+"</p>");
-                    
-                    //display "machine out of order" status bar 
+                    $('#statuses').append("<p class=\"py-0 my-0\" id=\"" +machines[i]['machineName']+ "\">" + machines[i]['machineName']+"</p>");
+
+                    //display "machine out of order" status bar
                     if(machines[i]['status']==0){
-                        $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-danger\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">Out of order</div></div>") 
+                        $('#statuses').append("<div class=\"progress m-0 mb-3\"> <div class=\"progress-bar-striped bg-danger\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">Out of order</div></div>")
                     }
 
                     //if machine is able to print
@@ -71,9 +71,9 @@ function status_bars(){
 
                         //currently not in use
                         if(machines[i]['inUse']==0){
-                            $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-info\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">Not performing job</div></div>") 
+                            $('#statuses').append("<div class=\"progress m-0 mb-3\"> <div class=\"progress-bar-striped bg-info\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">Not performing job</div></div>")
                         }
-                        
+
                         //currently in use, inUse == 1
                         else{
 
@@ -83,7 +83,7 @@ function status_bars(){
                             //not inefficient double for loop since only select projects that don't have end time
                             for(var j=0;j<projects.length;j++){
                                 if(projects[j]['machine']===machines[i]['machineName']){
-                                    
+
                                     //save which project is being printed by this machine
                                     matchedProject = projects[j];
 
@@ -103,12 +103,12 @@ function status_bars(){
 
                             //if project start time is AFTER current time
                             if(start > current){
-                                $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-warning\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\">Print not started yet</div></div>");
+                                $('#statuses').append("<div class=\"progress m-0 mb-3\" style=\"height: 20px;\"> <div class=\"progress-bar-striped bg-warning\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\">Print not started yet</div></div>");
                             }
 
                             //if current time is AFTER end time
                             else if(current > eta){
-                                $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped bg-success\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\">Print finished already</div></div>");
+                                $('#statuses').append("<div class=\"progress m-0 mb-3\" style=\"height: 30px;\"> <div class=\"progress-bar-striped bg-success\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\">Print finished already</div></div>");
                             }
 
                             //currently printing
@@ -116,20 +116,20 @@ function status_bars(){
                                 var totalTime = eta-start;
                                 var timeElapsed = current-start;
                                 var percentage = timeElapsed/totalTime * 100;
-                                $('#statuses').append("<div class=\"progress\"> <div class=\"progress-bar-striped progress-bar-animated bg-success\"  role=\"progressbar\" style=\"width: "+ percentage+"%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\">"+percentage+"</div></div>");
+                                $('#statuses').append("<div class=\"progress m-0 mb-3\" style=\"height: 30px;\"> <div class=\"progress-bar-striped progress-bar-animated bg-success\"  role=\"progressbar\" style=\"width: "+ percentage+"%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\">"+percentage+"</div></div>");
                             }
                         }
                     }
-                    
+
                 }
             }
-        }); 
-        
-        
-        
+        });
+
+
+
     });
 
-    
+
 }
 
 //populate the webpage with information upon load

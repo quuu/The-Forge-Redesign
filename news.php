@@ -8,6 +8,15 @@
 <body class="bg-light">
 <?php include 'nav_bar.php';?>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center pt-3 display-4 text-primary">Forge News</h1>
+      <p class="text-center">Follow our facebook page to stay up to date.</p>
+    </div>
+  </div>
+</div>
+
 <!-- Media Integration goes here -->
 <script src="https://assets.juicer.io/embed.js" type="text/javascript"></script>
 <link href="https://assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />

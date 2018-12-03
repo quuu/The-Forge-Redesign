@@ -1,3 +1,18 @@
+<?php
+if(isset($_COOKIE['FORGE-SESSION'])){
+  require_once('controllers/db_connector.php');
+  $conn = dbConnect();
+  $stmt = $conn->prepare("SELECT * FROM sessions WHERE sessionID = :sessID");
+  $stmt->bindParam(":sessID", $_COOKIE['FORGE-SESSION']);
+  $stmt->execute();
+  $session = $stmt->fetch();
+  if($session){
+    header("Location: ./myforge.php");
+  }else{
+    setcookie("FORGE-SESSION",'', time() - 36000,'/');
+  }
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,7 +21,7 @@
   <?php include 'style.php';?>
 </head>
 
-<body>
+<body class="bg-secondary">
   <?php include 'nav_bar.php';?>
 
   <div class="container">
@@ -27,7 +42,7 @@
                   </div>
 
                   <div class="text-center">
-                    <button class="btn  btn-primary btn-clock text-uppercase" type="submit">Sign in</button>
+                    <button class="btn btn-primary btn-clock text-uppercase" type="submit">Sign in</button>
                   </div>
                 </form>
                 </div>

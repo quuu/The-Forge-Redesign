@@ -7,7 +7,7 @@
     <title>Create Account</title>
   </head>
 
-  <body>
+  <body class="bg-secondary">
     <?php include 'nav_bar.php'?>
     <!-- <h1>Create Account</h1>
     <div class="create">
@@ -64,7 +64,19 @@
                   <input type="password" class="form-control" name="password" placeholder="Password" required/>
                 </div>
 
-                <div class="text-center">
+                  <div class="form-group">
+                      <input type="text" class="form-control" name="gender" placeholder="Gender (Optional)"/>
+                  </div>
+
+                  <div class="form-group">
+                      <input type="text" class="form-control" name="major" placeholder="Major" required/>
+                  </div>
+
+                  <div class="checkbox">
+                      <label><input type="checkbox" value="true" required>&nbspI agree to pay the $10 membership Fee</label>
+                  </div>
+
+                  <div class="text-center">
                   <button class="btn btn-primary btn-clock text-uppercase" type="submit" name="submit">Create</button>
                 </div>
               </form>

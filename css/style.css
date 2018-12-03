@@ -37,6 +37,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     margin: 0;
 }
 
+<<<<<<< HEAD
 /*
  * Globals
  */
@@ -249,4 +250,16 @@ body {
   #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover {
     color: #F05F40;
   }
+=======
+.page-title{
+  font-size: 4em;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #f71118;
+}
+
+.fixed-btn-size{
+  width:85%;
+  height:100%;
+  padding:5px;
+>>>>>>> origin/master
 }
