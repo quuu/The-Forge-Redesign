@@ -26,8 +26,12 @@ function fetchProjects(projectsReturn){
     });
 }
 
-function createStatusBars(){
-    // $('#statuses').empty();
+/**
+ * Generates the initial and empty status bars to be
+ * populatetd with information later in a loop
+ */
+function createStatusBars() {
+    
    /**
      * machines[n][0] == inUSe
      * machines[n][1] == status
@@ -68,7 +72,8 @@ function createStatusBars(){
                 }
             }
             //initial call
-            updateStatusBars(machines,projects);
+            updateStatusBars(machines, projects);
+            
             //repeating call
             setInterval(function () {
                 fetchMachines(function (m) {
@@ -76,13 +81,22 @@ function createStatusBars(){
                        updateStatusBars(m, p);
                     })
                 })
-            }, 3000)
+            }, 3000) //every 3 seconds
         }); 
     });
 }
-function updateStatusBars(machines,projects) {
+/**
+ * 
+ * @param machines - array of machine data stored as a dictionary
+ * @param projects - array of projects data stored as a dictionary
+ * @modifies #machine_id - with information about the project currently being printed
+ * 
+ */
+function updateStatusBars(machines, projects) {
+    
+    //for every machine
     for (var i = 0; i < machines.length; i++) {
-        // console.log(machines[i]);
+
         if (typeof machines[i] !== "undefined") {
 
             //variable to hold "[machineName]_percentage"
@@ -99,10 +113,8 @@ function updateStatusBars(machines,projects) {
             //if machine is able to print
             else {
 
-
                 //currently not in use
                 if (machines[i]['inUse'] == 0) {
-
                     elem.setAttribute('class', 'progress-bar-striped bg-info');
                     elem.innerHTML = "Not performing job";
                 }
