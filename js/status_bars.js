@@ -64,7 +64,7 @@ function createStatusBars() {
                 if(typeof machines[i] !== "undefined"){
 
                     //appending machine name
-                    $('#statuses').append("<p class='m-0' id=\"" +machines[i]['machineName']+ "\">"  +machines[i]['machineName']+"</p>");
+                    $('#statuses').append("<p class='m-0 roboto text-large' id=\"" +machines[i]['machineName']+ "\">"  +machines[i]['machineName']+"</p>");
 
                     //default status bar
                     $('#statuses').append("<div class=\"progress mb-3\"><div class=\"progress-bar-striped bg-info\" id=\"" + machines[i]['machineName'] + "_percentage\" role=\"progressbar\" style=\"width:100%\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\"></div></div>");
