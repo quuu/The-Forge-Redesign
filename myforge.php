@@ -69,7 +69,7 @@
             <p class='text-center'>What will you create today?</p>";
             echo "<div class='row py-2'>";
             echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
-            echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='scripts/free_machine.php'>Free a Machine</a></div>";
+            echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='free_machine.php'>Free a Machine</a></div>";
             //display a pop-up asking for failed machine, then pull user info and get email to send
             echo "<div class='col-md-4 text-center'><button type=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\">Failed Print Email</button></div>";
             echo "</div>
@@ -85,7 +85,7 @@
             <h1 class='card-title text-center'>Admin Panel</h1>";
             echo "<div class='row py-2'>";
               echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
-              echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='scripts/free_machine.php'>Free a Machine</a></div>";
+              echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='free_machine.php'>Free a Machine</a></div>";
               // Heuristic Report as .xls
               echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='reports.php'>Download Reports</a></div>";
 
@@ -108,7 +108,7 @@
             <h1 class='card-title text-center'>Super Admin Panel</h1>";
             echo "<div class='row py-2'>";
             echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
-            echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='scripts/free_machine.php'>Free a Machine</a></div>";
+            echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='free_machine.php'>Free a Machine</a></div>";
             // Heuristic Report as .xls
             echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='reports.php'>Download Reports</a></div>";
             echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-warning btn-clock text-uppercase fixed-btn-size\" href='create_account.php'>Create Account</a></div>";
