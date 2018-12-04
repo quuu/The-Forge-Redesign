@@ -142,7 +142,7 @@ $spreadsheet->getActiveSheet()->setCellValue('D8', $mostPopularColor);
 $spreadsheet->getActiveSheet()->setCellValue('D9', $leastPopularColor);
 
 $spreadsheet->getActiveSheet()->setCellValue('D11', $numPrints);
-$spreadsheet->getActiveSheet()->setCellValue('D11', $totalVolume);
+$spreadsheet->getActiveSheet()->setCellValue('D12', $totalVolume);
 
 //for Leaderboards
 $count = 3;
