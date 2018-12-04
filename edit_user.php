@@ -7,6 +7,10 @@
   </head>
 
   <body class="bg-secondary">
+
+    <div class="bg-secondary pt-3 p-2">
+        <?php include 'nav_bar.php';?>
+    </div>
       <div class="container">
         <div class="row">
           <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">

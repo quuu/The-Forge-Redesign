@@ -19,7 +19,9 @@
 </head>
 
 <body class="bg-secondary">
-<?php include_once 'nav_bar.php';?>
+  <div class="bg-secondary pt-3 p-2">
+      <?php include 'nav_bar.php'?>
+  </div>
 <div class="container">
   <?php
     $user_type = getPerms();

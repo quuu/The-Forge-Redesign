@@ -1,59 +1,26 @@
 <?php include_once 'style.php';?>
 <?php include_once 'controllers/functions.php';?>
 <?php include_once 'scripts.php';?>
-<nav class="navbar navbar-expand-md bg-secondary navbar-light">
-<div class="container">
-  <a class="navbar-brand" href="#">
-    <img src="logo/forgelogo revis3.png" width="65" class="d-inline-block align-top" alt="" height="50"> </a>
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto w-100">
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="equipment.php">Equipment</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="hours.php">Hours of Operation</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="gallery.php">Gallery
-          <br> </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="news.php">News</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="contact.php">Contact Us
-                <br> </a>
-      </li>
-    </ul>
-
-      <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-user-circle" style="font-size:36px">
-                  <?php
-                        $name = getName();
-                        if($name != 404){
-                            echo $name;
-                        }
-                  ?>
-              </i>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  <div class="container d-flex w-100 mx-auto my-auto flex-column align-middle">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <a href="index.php"><img src="logo/forgelogo revis3.png" width="50" class="masthead-brand"/></a>
+        <nav class="nav nav-masthead justify-content-center roboto" id="mainNav">
+          <a class="nav-link text-muted" href="index.php">Home</a>
+          <a class="nav-link text-muted align-middle" href="equipment.php">Equipment</a>
+          <a class="nav-link text-muted" href="hours.php">Hours</a>
+          <a class="nav-link text-muted" href="gallery.php">Gallery</a>
+          <a class="nav-link text-muted" href="news.php">News</a>
+          <a class="nav-link text-muted" href="contact.php">Contact</a>
           <?php
-            if(isset($_COOKIE['FORGE-SESSION'])){
-                    echo "<a class=\"dropdown-item\" href=\"myforge.php\">My Forge</a>";
-                    echo "<a class=\"dropdown-item\" href=\"#\">Logout</a>";
-            }else{
-                    echo "<a class=\"dropdown-item\" href=\"login.php\">Login </a>";
-            }
+          if(isset($_COOKIE['FORGE-SESSION'])){
+            echo "<a class=\"nav-link text-muted\" href=\"myforge.php\">My Forge</a>";
+            echo "<a class=\"nav-link text-muted\" href=\"controllers/logout_controller.php\">Logout</a>";
+          }else{
+            echo "<a class=\"nav-link text-muted\" href=\"login.php\">Login </a>";
+          }
           ?>
-        </div>
+        </nav>
       </div>
+    </header>
   </div>
-</div>
-</nav>
