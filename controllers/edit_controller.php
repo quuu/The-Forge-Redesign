@@ -52,7 +52,7 @@ if(isset($_POST['rcsID']) && isset($_POST['rin'])){
     $stmt->bindParam(':rcsID',$rcsID);
     $stmt->bindParam(':password',$password);
     $stmt->execute();
-      header("Location: ../myforge.php");
+    header("Location: ../myforge.php");
     exit(); 
   }
 }else{
