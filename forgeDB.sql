@@ -25,7 +25,7 @@ CREATE TABLE `hardware` (
   `inUse` BOOLEAN,
   `status` BOOLEAN,
   `machineName` varchar(50) NOT NULL,
-  `usesPlastic` BOOLEAN
+  `usesPlastic` BOOLEAN,
   PRIMARY KEY (`machineName`)
 );
 

@@ -58,7 +58,7 @@ if(isset($_POST['machine'])){
     $stmt->bindParam(":price", $paramaterArray['payment']);
     $stmt->bindParam(":rin", $paramaterArray['ID']);
     $stmt->execute();
-    echo "<script>setTimeout(\"location.href = '../myforge.php';\",1500);</script>";
+    echo "<script>window.location.href = \" ../myforge.php \";</script>";
     exit();
 }
 
