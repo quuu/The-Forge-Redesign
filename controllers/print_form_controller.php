@@ -13,7 +13,6 @@ if(isset($_POST['machine'])){
     $start = date("Y-m-d H:i:s",time());
     
     if(isset($_POST['time']) && $_POST['time'] != ""){
-        var_dump($_POST['time']);
         $eta = date("Y-m-d H:i:s",time() + $_POST['time'] * 60);
     }else{
         $eta = NULL;
