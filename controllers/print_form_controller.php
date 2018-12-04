@@ -61,7 +61,7 @@ if(isset($_POST['machine'])){
     echo "<script>window.location.href = \" ../myforge.php \";</script>";
     exit();
 }
-
+/*
 // Polls the database for the machines that are not currently in use.
 function generateMachineDropDown(){
     $connection = dbconnect();
@@ -74,7 +74,7 @@ function generateMachineDropDown(){
         echo $item;
     }
 }
-
+*/
 // Polls the database for prices of materials
 function generatePlasticsDropDown(){
     $connection = dbconnect();

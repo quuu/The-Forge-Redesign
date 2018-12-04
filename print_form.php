@@ -1,6 +1,7 @@
 <?php
 include "controllers/auth_controller.php";
 include "controllers/print_form_controller.php";
+include "controllers/functions.php";
 ?>
 <!DOCTYPE html>
 <html class="bg-secondary">
@@ -23,7 +24,7 @@ include "controllers/print_form_controller.php";
 
                 <label for="machine" id="machinelabel">Machine Type:</label>
                 <select name="machine" id="machine" required>
-                  <?php generateMachineDropDown() ?>
+                  <?php generateMachineDropDown(0) ?>
                 </select>
 
                 <div id="plasticinfo">
