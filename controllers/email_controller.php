@@ -43,15 +43,3 @@ if(isset($_POST['machine'])) {
         echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
     }
 }
-
-function generateMachineDropDown(){
-    $connection = dbconnect();
-    $stmt = $connection->prepare('SELECT machineName FROM hardware WHERE inUse = 1');
-    $stmt->execute();
-    $machines = $stmt->fetchall();
-    foreach($machines as $machine){
-        $item = "<option value=" . "\"" . $machine["machineName"] . "\"" . ">";
-        $item .= $machine["machineName"];
-        echo $item;
-    }
-}

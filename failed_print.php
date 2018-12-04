@@ -4,6 +4,7 @@
     <?php include_once 'style.php'?>
     <?php include_once 'controllers/email_controller.php'?>
     <?php include_once 'controllers/db_connector.php'?>
+    <?php include_once 'controllers/functions.php'?>
     <?php include_once 'scripts.php'?>
     <meta charset="utf-8">
     <title>Edit User</title>
@@ -25,7 +26,7 @@
                         <div class="form-group">
                             <label for="machine" id="machinelabel">Machine Type:</label>
                             <select name="machine" id="machine" required>
-                                <?php generateMachineDropDown() ?>
+                                <?php generateMachineDropDown(1) ?>
                             </select>
                         </div>
                     </form>
