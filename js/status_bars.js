@@ -31,7 +31,7 @@ function fetchProjects(projectsReturn){
  * populatetd with information later in a loop
  */
 function createStatusBars() {
-    
+
    /**
      * machines[n][0] == inUSe
      * machines[n][1] == status
@@ -64,16 +64,16 @@ function createStatusBars() {
                 if(typeof machines[i] !== "undefined"){
 
                     //appending machine name
-                    $('#statuses').append("<p id=\"" +machines[i]['machineName']+ "\"> Machine Name: "  +machines[i]['machineName']+"</p>");
-                    
+                    $('#statuses').append("<p class='m-0' id=\"" +machines[i]['machineName']+ "\"> Machine Name: "  +machines[i]['machineName']+"</p>");
+
                     //default status bar
-                    $('#statuses').append("<div class=\"progress\"><div class=\"progress-bar-striped bg-info\" id=\"" + machines[i]['machineName'] + "_percentage\" role=\"progressbar\" style=\"width:100%\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\"></div></div>");
-                    
+                    $('#statuses').append("<div class=\"progress mb-3\"><div class=\"progress-bar-striped bg-info\" id=\"" + machines[i]['machineName'] + "_percentage\" role=\"progressbar\" style=\"width:100%\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\"></div></div>");
+
                 }
             }
             //initial call
             updateStatusBars(machines, projects);
-            
+
             //repeating call
             setInterval(function () {
                 fetchMachines(function (m) {
@@ -82,18 +82,18 @@ function createStatusBars() {
                     })
                 })
             }, 3000) //every 3 seconds
-        }); 
+        });
     });
 }
 /**
- * 
+ *
  * @param machines - array of machine data stored as a dictionary
  * @param projects - array of projects data stored as a dictionary
  * @modifies #machine_id - with information about the project currently being printed
- * 
+ *
  */
 function updateStatusBars(machines, projects) {
-    
+
     //for every machine
     for (var i = 0; i < machines.length; i++) {
 
@@ -103,12 +103,12 @@ function updateStatusBars(machines, projects) {
             var elem = document.getElementById(machines[i]['machineName'] + '_percentage');
 
 
-            //display "machine out of order" status bar  
+            //display "machine out of order" status bar
             if (machines[i]['status'] == 0) {
                 elem.setAttribute('class', 'progress-bar-striped bg-danger');
                 elem.setAttribute('aria-valuenow', '100');
                 elem.innerHTML="Out of order";
-            }    
+            }
 
             //if machine is able to print
             else {
@@ -124,7 +124,7 @@ function updateStatusBars(machines, projects) {
 
                     //for the details of the project being printed
                     var matchedProject;
-                    
+
                     //look through every project
                     for (var j = 0; j < projects.length; j++){
                         //TODO: ACCOUNT FOR COMPLETED PROJECTS, MAKE SURE THEY DONT PASS THIS IF STATEMENT
@@ -136,9 +136,9 @@ function updateStatusBars(machines, projects) {
                                  //time calculation
                                 var start = new Date(matchedProject['startTime']);
                                 var eta = new Date(matchedProject['eta']);
-                                
+
                                 var current = new Date();
-                                
+
                                 //if project start time is AFTER current time
                                 if (start > current) {
                                     elem.setAttribute('class', 'progress-bar-striped bg-warning');
@@ -150,9 +150,9 @@ function updateStatusBars(machines, projects) {
                                 else if (current > eta) {
                                     elem.setAttribute('class', 'progress-bar-striped progress-bar-animated bg-success');
                                     elem.innerHTML = "Print still being worked on";
-                                    
+
                                 }
-                                    
+
                                 //under work currently
                                 else {
                                     var totalTime = eta-start;
@@ -176,7 +176,7 @@ function updateStatusBars(machines, projects) {
                     }
                 }
             }
-        }            
+        }
 
     }
 
@@ -187,4 +187,3 @@ $(document).ready(function(){
     //initial call
     createStatusBars();
 });
-
