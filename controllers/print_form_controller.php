@@ -61,20 +61,7 @@ if(isset($_POST['machine'])){
     echo "<script>window.location.href = \" ../myforge.php \";</script>";
     exit();
 }
-/*
-// Polls the database for the machines that are not currently in use.
-function generateMachineDropDown(){
-    $connection = dbconnect();
-    $stmt = $connection->prepare('SELECT machineName FROM hardware WHERE inUse = 0');
-    $stmt->execute();
-    $machines = $stmt->fetchall();
-    foreach($machines as $machine){
-        $item = "<option value=" . "\"" . $machine["machineName"] . "\"" . ">";
-        $item .= $machine["machineName"];
-        echo $item;
-    }
-}
-*/
+
 // Polls the database for prices of materials
 function generatePlasticsDropDown(){
     $connection = dbconnect();
