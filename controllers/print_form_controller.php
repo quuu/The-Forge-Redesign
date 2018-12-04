@@ -52,25 +52,14 @@ if(isset($_POST['machine'])){
     $stmt->bindParam(":machine", $_POST['machine']);
     $stmt->execute();
 
+
     //Updates Outstanding Balance in Users Table
     $stmt = $conn->prepare("UPDATE users SET `outstandingBalance` = `outstandingBalance` + :price WHERE `rin` = :rin");
     $stmt->bindParam(":price", $paramaterArray['payment']);
     $stmt->bindParam(":rin", $paramaterArray['ID']);
     $stmt->execute();
+    echo "<script>window.location.href = \" ../myforge.php \";</script>";
     exit();
-}
-
-// Polls the database for the machines that are not currently in use.
-function generateMachineDropDown(){
-    $connection = dbconnect();
-    $stmt = $connection->prepare('SELECT machineName FROM hardware WHERE inUse = 0');
-    $stmt->execute();
-    $machines = $stmt->fetchall();
-    foreach($machines as $machine){
-        $item = "<option value=" . "\"" . $machine["machineName"] . "\"" . ">";
-        $item .= $machine["machineName"];
-        echo $item;
-    }
 }
 
 // Polls the database for prices of materials

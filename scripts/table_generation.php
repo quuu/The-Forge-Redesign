@@ -124,7 +124,7 @@ function generateTotalTable($class, $id){//given an admin user, generate a works
     //for user stats
     $num_volunteers = (int)getVolunteers();
     $num_members = (int)getMembers();
-    $conversion_rate = ($num_members / $num_volunteers)*100;
+    $conversion_rate = ($num_volunteers / $num_members)*100;
 
     //for printers
     $num_prints = getPrintStats("prints");
