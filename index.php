@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Welcome to the Forge</title>
   </head>
-  <body class="text-center cover-body">
+  <body class="text-center">
     <div class="text-center bg-primary w-100 h-100" style="background-image: url('homePagePhotos/cover.jpg');background-size:cover;background-position:center center;">
       <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
