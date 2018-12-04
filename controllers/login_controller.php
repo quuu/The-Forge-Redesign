@@ -12,7 +12,9 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
   if(!$user){
     echo "<script>
     alert('Your rcsID or password is incorrect!');
+    window.location.replace(\" ../login.php \");
     </script>";
+      //header("Location: ../login.php");
   }else{
     if(password_verify($user_pass,$user['password'])){
       $stmt = $conn->prepare('INSERT INTO Sessions (sessionID, userID,expiration)
@@ -31,7 +33,9 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
     }else{
       echo "<script>
       alert('Your rcsID or password is incorrect!');
+      window.location.replace(\" ../login.php \");
       </script>";
+       //header("Location: ../login.php");
     }
   }
 }else{
