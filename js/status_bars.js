@@ -159,7 +159,7 @@ function updateStatusBars(machines, projects) {
                                     var timeElapsed = current-start;
                                     var percentage = timeElapsed / totalTime * 100;
                                     elem.setAttribute('class', 'progress-bar-striped progress-bar-animated bg-success');
-                                    elem.setAttribute('style', 'width: \"' + percentage + '\"%');
+                                    elem.setAttribute('style', 'width: ' + percentage + '%');
                                     elem.setAttribute('aria-valuenow', '50')
                                     elem.innerHTML = percentage.toFixed(2);
                                 }
