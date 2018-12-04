@@ -3,7 +3,7 @@ include "controllers/auth_controller.php";
 include "controllers/print_form_controller.php";
 ?>
 <!DOCTYPE html>
-<html>
+<html class="bg-secondary">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,8 +36,9 @@ include "controllers/print_form_controller.php";
 
 
                   <div class="form-group">
-                    <label for="amount" id="amountlabel">Amount of plastic (g) (0 IF USING YOUR OWN MATERIAL OR REPRINT)</label>
+                    <label for="amount" id="amountlabel">Amount of plastic (g)</label>
                     <input type="text" class="form-control required" id="plasticamount" name="amount"/>
+                    <small id="amountsmall" class="form-text text-muted ml-1 required"> (0 if using your own material or reprint)</small>
                     <small id="printprice" class="form-text text-muted ml-1 required"></small>
                   </div>
 

@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en">
+<html class="bg-secondary" lang="en">
   <head>
     <?php include 'style.php';?>
     <meta charset="utf-8">

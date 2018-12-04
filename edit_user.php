@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html class="bg-secondary" lang="en">
   <head>
     <?php include 'style.php'?>
     <meta charset="utf-8">
@@ -70,7 +70,7 @@
                   //appending on extra functions if needed
                   //may change depending on priveleges
                   if($user_type=="volunteer"){
-                    
+
                     if($user_type=="admin"){
                       //can change volunteer status
 
@@ -78,7 +78,7 @@
                         //can change admin status
 
                         if($user_type=="superAdmin"){
-                          //can do everything 
+                          //can do everything
                         }
                       }
                     }

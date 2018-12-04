@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="bg-light">
 
 <head>
   <?php include 'style.php';?>
