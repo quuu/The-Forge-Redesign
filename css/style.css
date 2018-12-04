@@ -263,3 +263,7 @@ body {
   padding:5px;
 >>>>>>> origin/master
 }
+
+.text-large{
+  font-size: 1.15em;
+}
