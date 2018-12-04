@@ -59,6 +59,29 @@
                     <input type="password" id="password" class="form-control" name="password" placeholder="Password" />
                   </div>
 
+                  <?php
+                  $user_type = getPerms();
+
+                  //low permission to high permission
+                  //appending on extra functions if needed
+                  //may change depending on priveleges
+                  if($user_type=="volunteer"){
+                    
+                    if($user_type=="admin"){
+                      //can change volunteer status
+
+                      if($user_type=="TA"){
+                        //can change admin status
+
+                        if($user_type=="superAdmin"){
+                          //can do everything 
+                        }
+                      }
+                    }
+                  }
+
+                ?>
+
                  <div class="text-center">
                     <button class="btn btn-primary btn-clock text-uppercase" type="submit" name="submit">Update</button>
                   </div>
