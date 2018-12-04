@@ -38,7 +38,7 @@ if(isset($_POST['machine'])){
         'amount' => $_POST['amount'],
         'color' => $_POST['color'],
         'brand' => $_POST['brand'],
-        'temp' => $_POST['temp'],
+        'temp' => intval($_POST['temp']),
         'payment' => $price,
         'machine' => $_POST['machine'],
         'forClass' => $forclass,
