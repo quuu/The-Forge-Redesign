@@ -38,6 +38,7 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
     $stmt->bindParam(':gender',$gender_clean);
     $stmt->bindParam(':major',$major_clean);
     $stmt->execute();
+    header("Location: ../myforge.php");
     exit();
 }else{
   die("ERROR");
