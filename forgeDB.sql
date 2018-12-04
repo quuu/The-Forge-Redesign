@@ -25,8 +25,7 @@ CREATE TABLE `hardware` (
   `inUse` BOOLEAN,
   `status` BOOLEAN,
   `machineName` varchar(50) NOT NULL,
-  `usesPlastic` BOOLEAN,
-  `inUseBy` int,
+  `usesPlastic` BOOLEAN
   PRIMARY KEY (`machineName`)
 );
 
@@ -72,7 +71,6 @@ CREATE TABLE `sessions` (
   ALTER TABLE `projects` ADD CONSTRAINT `fk_userID`  FOREIGN KEY (`userID`) REFERENCES `users`(`rin`) ON DELETE NO ACTION ON UPDATE NO ACTION;
   ALTER TABLE `sessions` ADD CONSTRAINT `fk_userID2` FOREIGN KEY (`userID`) REFERENCES `users`(`rin`) ON DELETE NO ACTION ON UPDATE NO ACTION;
   ALTER TABLE `volunteers` ADD CONSTRAINT `fk_userID3` FOREIGN KEY (`rin`) REFERENCES `users`(`rin`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-  ALTER TABLE `hardware` ADD CONSTRAINT `fk_rin2` FOREIGN KEY (`inUseBy`) REFERENCES `users`(`rin`) ON DELETE NO ACTION ON UPDATE NO ACTION;
   
   INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`) VALUES (0,1,"Laser Cutter",0);
   INSERT INTO `hardware`(`inUse`, `status`, `machineName`, `usesPlastic`) VALUES (0,1,"Vinyl Cutter",0);

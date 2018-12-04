@@ -52,18 +52,12 @@ if(isset($_POST['machine'])){
     $stmt->bindParam(":machine", $_POST['machine']);
     $stmt->execute();
 
-    //update usedBY
-    $stmt = $conn->prepare("UPDATE hardware SET inUseBY=:userID WHERE machineName=:machine;");
-    $stmt->bindParam(":userID", $paramaterArray['ID']);
-    $stmt->bindParam(":machine", $_POST['machine']);
-    $stmt->execute();
 
     //Updates Outstanding Balance in Users Table
     $stmt = $conn->prepare("UPDATE users SET `outstandingBalance` = `outstandingBalance` + :price WHERE `rin` = :rin");
     $stmt->bindParam(":price", $paramaterArray['payment']);
     $stmt->bindParam(":rin", $paramaterArray['ID']);
     $stmt->execute();
-    echo "alert('Submission Sent Successfully')";
     echo "<script>setTimeout(\"location.href = '../myforge.php';\",1500);</script>";
     exit();
 }

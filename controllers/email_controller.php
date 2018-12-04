@@ -8,23 +8,11 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require '../vendor/autoload.php';
 include_once 'db_connector.php';
+include_once 'functions.php';
 if(isset($_POST['machine'])) {
     $machine_in = $_POST['machine'];
 
-    //grab the Rin of that Machine
-    $conn = dbConnect();
-    $numUses = $conn->prepare("SELECT inUseBy FROM hardware WHERE machineName = :machine");
-    $stmt->bindParam(':machine',$machine_in);
-    $numUses->execute();
-    $rin_ret = $numUses->fetchColumn();
-
-    //grab the email from that RIN
-    $conn = dbConnect();
-    $numUses = $conn->prepare("SELECT email FROM users WHERE rin = :rin");
-    $stmt->bindParam(':rin',$rin_ret);
-    $numUses->execute();
-    //now we have the email
-    $email_ret = $numUses->fetchColumn();
+    $email_ret = emailMachine($machine_in);
 
 
     $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
