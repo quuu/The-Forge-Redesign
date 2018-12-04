@@ -2,7 +2,6 @@
 <?php include_once 'controllers/functions.php';?>
 <?php include_once 'scripts.php';?>
   <div class="container d-flex w-100 mx-auto my-auto flex-column align-middle">
-
     <header class="masthead mb-auto">
       <div class="inner">
         <a href="index.php"><img src="logo/forgelogo revis3.png" width="50" class="masthead-brand"/></a>
@@ -22,8 +21,6 @@
 
           }
           ?>
-
-
         </nav>
       </div>
     </header>

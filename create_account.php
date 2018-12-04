@@ -2,14 +2,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <?php include 'style.php'?>
+    <?php include 'style.php';?>
     <meta charset="utf-8">
     <title>Create Account</title>
   </head>
 
   <body class="bg-secondary">
     <div class="bg-secondary pt-3 p-2">
-        <?php include 'nav_bar.php'?>
+        <?php include 'nav_bar.php';?>
     </div>
     <div class="container">
       <div class="row">

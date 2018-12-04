@@ -8,7 +8,7 @@
 </head>
 <body class="bg-secondary">
   <div class="bg-secondary pt-3 p-2">
-      <?php include 'nav_bar.php'?>
+      <?php include 'nav_bar.php';?>
   </div>
   <?php include 'footer.php';?>
 </body>

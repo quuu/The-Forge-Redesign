@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="bg-secondary pt-3 p-2">
-      <?php include 'nav_bar.php'?>
+      <?php include 'nav_bar.php';?>
   </div>
 
 
@@ -130,6 +130,6 @@
     </div>
   </div>
   </div>
-  <?php include 'footer.php'?>
+  <?php include 'footer.php';?>
 </body>
 </html>

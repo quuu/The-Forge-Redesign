@@ -8,7 +8,7 @@
 
 <body class="bg-light">
   <div class="bg-secondary pt-3 p-2">
-      <?php include 'nav_bar.php'?>
+      <?php include 'nav_bar.php';?>
   </div>
   <div class="py-5 text-center bg-primary filter-dark cover" style="background-image: url('homePagePhotos/CII2037.JPG');background-size:cover;background-position:center center;">
     <div class="container">
@@ -43,7 +43,7 @@
       </div>
     </div>
   </div>
-  <?php include 'footer.php' ?>
+  <?php include 'footer.php';?>
 </body>
 
 </html>

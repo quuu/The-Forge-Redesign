@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <body class="bg-light">
   <div class="bg-light pt-3 p-2">
-      <?php include 'nav_bar.php'?>
+      <?php include 'nav_bar.php';?>
   </div>
 
 <div class="container">
@@ -25,7 +25,7 @@
 <div class="container">
   <ul class="juicer-feed" data-feed-id="rpimakerspace" data-style="polaroid" data-per="20" data-filter="Facebook"><h1 class="referral"></h1></ul>
 </div>
-<?php include 'footer.php' ?>
+<?php include 'footer.php';?>
 </body>
 
 </html>
