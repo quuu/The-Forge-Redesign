@@ -9,7 +9,10 @@
   <title>Equipment</title>
 </head>
 <body>
-  <?php include 'nav_bar.php'?>
+  <div class="bg-secondary pt-3 p-2">
+      <?php include 'nav_bar.php'?>
+  </div>
+
 
   <div class="py-2 bg-secondary">
   <div class="container">

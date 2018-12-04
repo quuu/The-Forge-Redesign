@@ -7,7 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="bg-secondary">
-  <?php include 'nav_bar.php';?>
+  <div class="bg-secondary pt-3 p-2">
+      <?php include 'nav_bar.php'?>
+  </div>
   <?php include 'footer.php';?>
 </body>
 

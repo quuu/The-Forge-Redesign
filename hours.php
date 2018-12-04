@@ -7,7 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <body class="bg-light">
-  <?php include 'nav_bar.php';?>
+  <div class="bg-secondary pt-3 p-2">
+      <?php include 'nav_bar.php'?>
+  </div>
   <div class="py-5 text-center bg-primary filter-dark cover" style="background-image: url('homePagePhotos/CII2037.JPG');background-size:cover;background-position:center center;">
     <div class="container">
       <div class="row">

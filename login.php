@@ -22,7 +22,9 @@ if(isset($_COOKIE['FORGE-SESSION'])){
 </head>
 
 <body class="bg-secondary">
-  <?php include 'nav_bar.php';?>
+  <div class="bg-secondary pt-3 p-2">
+      <?php include 'nav_bar.php'?>
+  </div>
 
   <div class="container">
     <div class="row">
