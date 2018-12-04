@@ -18,7 +18,6 @@
             echo "<a class=\"nav-link text-muted\" href=\"controllers/logout_controller.php\">Logout</a>";
           }else{
             echo "<a class=\"nav-link text-muted\" href=\"login.php\">Login </a>";
-
           }
           ?>
         </nav>
