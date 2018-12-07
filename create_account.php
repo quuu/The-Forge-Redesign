@@ -48,7 +48,7 @@
                   </div>
 
                   <div class="form-group">
-                      <input type="text" class="form-control" name="major" placeholder="Major" required/>
+                      <input type="text" class="form-control" name="major" placeholder="Major(s)" required/>
                   </div>
 
                   <div class="checkbox">
