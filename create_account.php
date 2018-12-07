@@ -43,6 +43,10 @@
                   <input type="password" class="form-control" name="password" placeholder="Password" required/>
                 </div>
 
+                <div class="form-group">
+                  <input type="password" class="form-control" name="password2" placeholder="Confirm Password" required/>
+                </div>
+
                   <div class="form-group">
                       <input type="text" class="form-control" name="gender" placeholder="Gender (Optional)"/>
                   </div>

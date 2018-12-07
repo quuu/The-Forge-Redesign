@@ -2,6 +2,10 @@
 include_once "db_connector.php";
 
 if(isset($_POST['rcsID']) && isset($_POST['password'])){
+    if ($_POST['password'] != $_POST['password2']){
+      echo "<script type='text/javascript'>alert('Passwords do not match!');</script>";
+      exit();
+    }
     $first = $_POST['first'];
     $last = $_POST['last'];
     $email = $_POST['email'];
