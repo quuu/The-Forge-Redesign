@@ -55,13 +55,16 @@
                       <input type="text" class="form-control" name="major" placeholder="Major(s)" required/>
                   </div>
 
-                  <div class="checkbox">
-                      <label><input type="checkbox" value="true" required>&nbspI agree to pay the $10 membership Fee</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="true" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      I agree to pay the $10 membership Fee
+                    </label>
                   </div>
 
                   <div class="text-center">
-                  <button class="btn btn-primary btn-clock text-uppercase" type="submit" name="submit">Create</button>
-                </div>
+                    <button class="btn btn-primary btn-clock text-uppercase mt-2" type="submit" name="submit">Create</button>
+                  </div>
               </form>
             </div>
           </div>
