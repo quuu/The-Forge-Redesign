@@ -52,26 +52,26 @@
           <div class='card shadow-lg my-3'>
             <div class='card-body'>
             <h1 class='card-title text-center'>Innovation Station</h1>
-            <s class='text-center'>What will you create today?</s>";
-            echo "<div class='row py-2'>";
-            echo "<div class='col-md-12 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
+            <p class='text-center'>What will you create today?</p>";
+            echo "<div class='row py-2'><div class='col-md-12 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div></div>";
+            echo "<div class='row py-2'><div class='col-md-12 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='status_bars.php'>Status Bars</a></div></div>";
             echo "</div>
               </div>
             </div>
-          </div>
-        </div>";
+          </div>";
     }else if ($user_type == 'volunteer'){
       echo "<div class='row'>
         <div class='col-sm-12 mx-auto'>
           <div class='card shadow-lg my-3'>
             <div class='card-body'>
             <h1 class='card-title text-center'>Innovation Station</h1>
-            <s class='text-center'>What will you create today?</s>";
+            <p class='text-center'>What will you create today?</p>";
             echo "<div class='row py-2'>";
-            echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
-            echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='free_machine.php'>Free a Machine</a></div>";
+            echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
+            echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='free_machine.php'>Free a Machine</a></div>";
+            echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='status_bars.php'>Status Bars</a></div>";
             //display a pop-up asking for failed machine, then pull user info and get email to send
-            echo "<div class='col-md-4 text-center'><button type=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\" href='failed_print.php'>Failed Print Email</button></div>";
+            echo "<div class='col-md-3 text-center'><button type=\"button\" class=\"btn btn-lg btn-danger btn-clock text-uppercase fixed-btn-size\" href='failed_print.php'>Failed Print Email</button></div>";
             echo "</div>
             </div>
           </div>
@@ -84,10 +84,11 @@
             <div class='card-body'>
             <h1 class='card-title text-center'>Admin Panel</h1>";
             echo "<div class='row py-2'>";
-              echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
-              echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='free_machine.php'>Free a Machine</a></div>";
+              echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='print_form.php'>Use a Machine</a></div>";
+              echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='free_machine.php'>Free a Machine</a></div>";
+              echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='status_bars.php'>Status Bars</a></div>";
               // Heuristic Report as .xls
-              echo "<div class='col-md-4 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='reports.php'>Download Reports</a></div>";
+              echo "<div class='col-md-3 text-center'><a role=\"button\" class=\"btn btn-lg btn-success btn-clock text-uppercase fixed-btn-size\" href='reports.php'>Download Reports</a></div>";
 
             echo "</div>";
             echo "<div class ='row py-2'>";

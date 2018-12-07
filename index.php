@@ -14,7 +14,7 @@
           <div class="inner">
             <a href="index.php"><img src="logo/forgelogo revis3.png" width="50" class="masthead-brand"/></a>
             <nav class="nav nav-masthead justify-content-center roboto" id="mainNav">
-              <a class="active nav-link" href="index.php">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
               <a class="nav-link" href="equipment.php">Equipment</a>
               <a class="nav-link" href="hours.php">Hours</a>
               <a class="nav-link" href="gallery.php">Gallery</a>
