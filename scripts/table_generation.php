@@ -4,7 +4,7 @@ function generateSpecificTable($class, $id){//given a user, generate a recent pr
         $sessionID = $_COOKIE['FORGE-SESSION'];
         $conn = dbConnect();
         //grab the UserID (RIN) from the Session Data
-        $rin = $conn->prepare("SELECT UserID FROM Sessions WHERE sessionID = :sessionID");
+        $rin = $conn->prepare("SELECT UserID FROM sessions WHERE sessionID = :sessionID");
         $rin->bindParam(':sessionID',$sessionID);
         $rin->execute();
         $rin_result = $rin->fetchColumn();

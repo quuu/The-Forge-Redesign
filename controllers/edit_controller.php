@@ -11,7 +11,7 @@ if(isset($_POST['rcsID']) && isset($_POST['rin'])){
     // get the rin
     $rin = $_POST['rin'];
     //update query
-    $stmt = $conn->prepare('UPDATE Users SET rcsID = :rcsID, firstName = :firstname, lastName = :lastname, email = :email WHERE rin = :rin');
+    $stmt = $conn->prepare('UPDATE users SET rcsID = :rcsID, firstName = :firstname, lastName = :lastname, email = :email WHERE rin = :rin');
 
     //replace necessary fields
     $first = $_POST['first'];
@@ -35,7 +35,7 @@ if(isset($_POST['rcsID']) && isset($_POST['rin'])){
     // get the rin
     $rin = $_POST['rin'];
     //update query
-    $stmt = $conn->prepare('UPDATE Users SET rcsID = :rcsID, firstName = :firstname, lastName = :lastname, email = :email, password = :password WHERE rin = :rin');
+    $stmt = $conn->prepare('UPDATE users SET rcsID = :rcsID, firstName = :firstname, lastName = :lastname, email = :email, password = :password, type = :type WHERE rin = :rin');
 
     //replace necessary fields
     $first = $_POST['first'];
@@ -43,6 +43,7 @@ if(isset($_POST['rcsID']) && isset($_POST['rin'])){
     $email = $_POST['email'];
     $rin = $_POST['rin'];
     $rcsID = $_POST['rcsID'];
+    $perms = $_POST['perms'];
     
     $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
     $stmt->bindParam(':firstname',$first);
@@ -51,6 +52,7 @@ if(isset($_POST['rcsID']) && isset($_POST['rin'])){
     $stmt->bindParam(':rin',$rin);
     $stmt->bindParam(':rcsID',$rcsID);
     $stmt->bindParam(':password',$password);
+    $stmt->bindParam(':type',$perms);
     $stmt->execute();
     header("Location: ../myforge.php");
     exit(); 

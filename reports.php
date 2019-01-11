@@ -265,7 +265,7 @@ function make_query($conn,$stmt,&$result, $rowOrColumn){//passing by reference i
         url2 = "<?php echo $fileName2 ?>";
         downloadFile(url);
         downloadFile(url2);
-        document.location.href = "myForge.php";
+        document.location.href = "myforge.php";
 
     }, 2000);
 

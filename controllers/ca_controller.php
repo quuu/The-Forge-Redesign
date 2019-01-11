@@ -22,7 +22,7 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
 
     $conn = dbConnect();
     //Checks to see if there are users in the database with the same rcsID
-    $stmt = $conn->prepare('SELECT * FROM Users WHERE rcsID = :rcsID');
+    $stmt = $conn->prepare('SELECT * FROM users WHERE rcsID = :rcsID');
     $stmt->bindParam(':rcsID',$rcsID);
     $stmt->execute();
     $duplicate_user = $stmt->fetch();
@@ -31,7 +31,7 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
       echo "<script type='text/javascript'>alert('That rcsID is unavailable!');</script>";
       exit();
     }
-    $stmt = $conn->prepare('INSERT INTO Users (FirstName,LastName,Email,RIN,rcsID,Password, type, gender, major, outstandingBalance)
+    $stmt = $conn->prepare('INSERT INTO users (FirstName,LastName,Email,RIN,rcsID,Password, type, gender, major, outstandingBalance)
     VALUES (:firstname,:lastname,:email,:RIN,:rcsID,:Password, "user",:gender,:major,10)');
     $stmt->bindParam(':firstname',$first);
     $stmt->bindParam(':lastname',$last);
