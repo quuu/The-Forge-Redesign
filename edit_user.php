@@ -65,28 +65,30 @@
 
                   <?php
                   $user_type = getPerms();
-
-                  //low permission to high permission
-                  //appending on extra functions if needed
-                  //may change depending on priveleges
-                  if($user_type=="volunteer"){
-
-                    if($user_type=="admin"){
-                      //can change volunteer status
-
-                      if($user_type=="TA"){
-                        //can change admin status
-
-                        if($user_type=="superAdmin"){
-                          //can do everything
-                        }
-                      }
-                    }
+                  if($user_type == "admin"){
+                      echo "  <div class=\"form-group \">";
+                      echo "    <div class=\"col-auto my-1\">";
+                      echo "      <label class=\"mr-sm-2\" for=\"inlineFormCustomSelect\">Permissions</label>";
+                      echo "      <select class=\"custom-select mr-sm-2\" id=\"inlineFormCustomSelect\" name='perms'>";
+                      echo "        <option selected>Select User Group</option>";
+                      echo "        <option value=\"user\">User</option>";
+                      echo "        <option value=\"volunteer\">Volunteer</option>";
+                      echo "      </select>";
+                      echo "    </div>";
+                  }else if ($user_type == "TA"){
+                      echo "  <div class=\"form-group \">";
+                      echo "    <div class=\"col-auto my-1\">";
+                      echo "      <label class=\"mr-sm-2\" for=\"inlineFormCustomSelect\">Permissions</label>";
+                      echo "      <select class=\"custom-select mr-sm-2\" id=\"inlineFormCustomSelect\" name='perms'>";
+                      echo "        <option selected value=\"user\">User</option>";
+                      echo "        <option value=\"volunteer\">Volunteer</option>";
+                      echo "        <option value=\"admin\">Admin</option>";
+                      echo "      </select>";
+                      echo "    </div>";
                   }
-
                 ?>
 
-                 <div class="text-center">
+                 <div class="form-group">
                     <button class="btn btn-primary btn-clock text-uppercase" type="submit" name="submit">Update</button>
                   </div>
                 </form>

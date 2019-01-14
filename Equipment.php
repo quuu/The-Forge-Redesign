@@ -8,13 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Equipment</title>
 </head>
-<body>
-  <div class="bg-secondary pt-3 p-2">
+<body class="bg-light">
+  <div class="bg-light pt-3 p-2">
       <?php include 'nav_bar.php';?>
   </div>
 
 
-  <div class="py-2 bg-secondary">
+  <div class="py-2 bg-light">
   <div class="container">
     <div class="row">
       <div class="col-md-12">

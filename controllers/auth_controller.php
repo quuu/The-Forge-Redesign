@@ -5,7 +5,7 @@ if(isset($_COOKIE['FORGE-SESSION'])){
   //DB connection initialized
   $conn = dbConnect();
   $sessionID = $_COOKIE['FORGE-SESSION'];
-  $stmt = $conn->prepare('SELECT * FROM Sessions WHERE sessionID = :sessionID');
+  $stmt = $conn->prepare('SELECT * FROM sessions WHERE sessionID = :sessionID');
   $stmt->bindParam(':sessionID',$sessionID);
   $stmt->execute();
   $session = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -16,7 +16,7 @@ if(isset($_COOKIE['FORGE-SESSION'])){
     //If the session has expired
     if($current_time >= $expiration){
       //Deletes the session from the database
-      $stmt = $conn->prepare('DELETE FROM Sessions WHERE sessionID = :sessionID');
+      $stmt = $conn->prepare('DELETE FROM sessions WHERE sessionID = :sessionID');
       $stmt->bindParam(':sessionID',$sessionID);
       $stmt->execute();
       //Sets the cookie to expire in the past so the browser deletes it
@@ -26,7 +26,7 @@ if(isset($_COOKIE['FORGE-SESSION'])){
     }else{
         // We update the expiration to be later on if the user is in fact already logged in
         $expiration = date("Y-m-d H:i:s",time() + (24*60*60));
-        $stmt = $conn->prepare('UPDATE Sessions SET expiration = :expir WHERE sessionID = :sessionID');
+        $stmt = $conn->prepare('UPDATE sessions SET expiration = :expir WHERE sessionID = :sessionID');
         $stmt->bindParam(':expir', $expiration);
         $stmt->bindParam(':sessionID',$sessionID);
         $stmt->execute();

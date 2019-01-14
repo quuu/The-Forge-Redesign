@@ -7,7 +7,7 @@
         <a href="index.php"><img src="logo/forgelogo revis3.png" width="50" class="masthead-brand"/></a>
         <nav class="nav nav-masthead justify-content-center roboto" id="mainNav">
           <a class="nav-link text-muted" href="index.php">Home</a>
-          <a class="nav-link text-muted align-middle" href="equipment.php">Equipment</a>
+          <a class="nav-link text-muted" href="equipment.php">Equipment</a>
           <a class="nav-link text-muted" href="hours.php">Hours</a>
           <a class="nav-link text-muted" href="gallery.php">Gallery</a>
           <a class="nav-link text-muted" href="news.php">News</a>

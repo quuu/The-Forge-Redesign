@@ -6,7 +6,7 @@ function getRCSID(){
         $sessionID = $_COOKIE['FORGE-SESSION'];
         $conn = dbConnect();
         //grab the UserID (RIN) from the Session Data
-        $rin = $conn->prepare("SELECT UserID FROM Sessions WHERE sessionID = :sessionID");
+        $rin = $conn->prepare("SELECT UserID FROM sessions WHERE sessionID = :sessionID");
         $rin->bindParam(':sessionID',$sessionID);
         $rin->execute();
         $rin_result = $rin->fetchColumn();
@@ -29,7 +29,7 @@ function getName(){
         $sessionID = $_COOKIE['FORGE-SESSION'];
         $conn = dbConnect();
         //grab the UserID (RIN) from the Session Data
-        $rin = $conn->prepare("SELECT UserID FROM Sessions WHERE sessionID = :sessionID");
+        $rin = $conn->prepare("SELECT UserID FROM sessions WHERE sessionID = :sessionID");
         $rin->bindParam(':sessionID',$sessionID);
         $rin->execute();
         $rin_result = $rin->fetchColumn();
@@ -53,7 +53,7 @@ function getlastName(){
         $sessionID = $_COOKIE['FORGE-SESSION'];
         $conn = dbConnect();
         //grab the UserID (RIN) from the Session Data
-        $rin = $conn->prepare("SELECT UserID FROM Sessions WHERE sessionID = :sessionID");
+        $rin = $conn->prepare("SELECT UserID FROM sessions WHERE sessionID = :sessionID");
         $rin->bindParam(':sessionID',$sessionID);
         $rin->execute();
         $rin_result = $rin->fetchColumn();
@@ -77,7 +77,7 @@ function getEmail(){
         $sessionID = $_COOKIE['FORGE-SESSION'];
         $conn = dbConnect();
         //grab the UserID (RIN) from the Session Data
-        $rin = $conn->prepare("SELECT UserID FROM Sessions WHERE sessionID = :sessionID");
+        $rin = $conn->prepare("SELECT UserID FROM sessions WHERE sessionID = :sessionID");
         $rin->bindParam(':sessionID',$sessionID);
         $rin->execute();
         $rin_result = $rin->fetchColumn();
@@ -100,7 +100,7 @@ function getPerms(){
         $sessionID = $_COOKIE['FORGE-SESSION'];
         $conn = dbConnect();
         //grab the UserID (RIN) from the Session Data
-        $rin = $conn->prepare("SELECT UserID FROM Sessions WHERE sessionID = :sessionID");
+        $rin = $conn->prepare("SELECT UserID FROM sessions WHERE sessionID = :sessionID");
         $rin->bindParam(':sessionID',$sessionID);
         $rin->execute();
         $rin_result = $rin->fetchColumn();
@@ -123,7 +123,7 @@ function getUses(){
         $sessionID = $_COOKIE['FORGE-SESSION'];
         $conn = dbConnect();
         //grab the UserID (RIN) from the Session Data
-        $rin = $conn->prepare("SELECT UserID FROM Sessions WHERE sessionID = :sessionID");
+        $rin = $conn->prepare("SELECT UserID FROM sessions WHERE sessionID = :sessionID");
         $rin->bindParam(':sessionID',$sessionID);
         $rin->execute();
         $rin_result = $rin->fetchColumn();

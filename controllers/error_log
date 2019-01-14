@@ -1,0 +1,102 @@
+[10-Jan-2019 05:42:01 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/forge/public_html/controllers/db_connector.php:9
+Stack trace:
+#0 /home/forge/public_html/controllers/db_connector.php(9): PDO->__construct('mysql:host=loca...', 'forge_forge', 'wtNJ1sS)qTp[')
+#1 /home/forge/public_html/controllers/login_controller.php(3): dbConnect()
+#2 {main}
+  thrown in /home/forge/public_html/controllers/db_connector.php on line 9
+[10-Jan-2019 05:53:08 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/forge/public_html/controllers/db_connector.php:9
+Stack trace:
+#0 /home/forge/public_html/controllers/db_connector.php(9): PDO->__construct('mysql:host=loca...', 'forge_forge', 'wtNJ1sS)qTp[')
+#1 /home/forge/public_html/controllers/login_controller.php(3): dbConnect()
+#2 {main}
+  thrown in /home/forge/public_html/controllers/db_connector.php on line 9
+[10-Jan-2019 05:53:27 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/forge/public_html/controllers/db_connector.php:9
+Stack trace:
+#0 /home/forge/public_html/controllers/db_connector.php(9): PDO->__construct('mysql:host=loca...', 'forge_forge', 'wtNJ1sS)qTp[')
+#1 /home/forge/public_html/controllers/login_controller.php(3): dbConnect()
+#2 {main}
+  thrown in /home/forge/public_html/controllers/db_connector.php on line 9
+[10-Jan-2019 05:56:50 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/forge/public_html/controllers/db_connector.php:9
+Stack trace:
+#0 /home/forge/public_html/controllers/db_connector.php(9): PDO->__construct('mysql:host=loca...', 'forge_forge', 'wtNJ1sS)qTp[')
+#1 /home/forge/public_html/controllers/login_controller.php(3): dbConnect()
+#2 {main}
+  thrown in /home/forge/public_html/controllers/db_connector.php on line 9
+[10-Jan-2019 05:56:55 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/forge/public_html/controllers/db_connector.php:9
+Stack trace:
+#0 /home/forge/public_html/controllers/db_connector.php(9): PDO->__construct('mysql:host=loca...', 'forge_forge', 'wtNJ1sS)qTp[')
+#1 /home/forge/public_html/controllers/login_controller.php(3): dbConnect()
+#2 {main}
+  thrown in /home/forge/public_html/controllers/db_connector.php on line 9
+[10-Jan-2019 06:00:55 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Connection timed out in /home/forge/public_html/controllers/db_connector.php:9
+Stack trace:
+#0 /home/forge/public_html/controllers/db_connector.php(9): PDO->__construct('mysql:host=forg...', 'forge_forge', 'wtNJ1sS)qTp[')
+#1 /home/forge/public_html/controllers/login_controller.php(3): dbConnect()
+#2 {main}
+  thrown in /home/forge/public_html/controllers/db_connector.php on line 9
+[10-Jan-2019 06:06:34 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Connection timed out in /home/forge/public_html/controllers/db_connector.php:9
+Stack trace:
+#0 /home/forge/public_html/controllers/db_connector.php(9): PDO->__construct('mysql:host=forg...', 'forge_forge', 'wtNJ1sS)qTp[')
+#1 /home/forge/public_html/controllers/login_controller.php(3): dbConnect()
+#2 {main}
+  thrown in /home/forge/public_html/controllers/db_connector.php on line 9
+[10-Jan-2019 06:08:44 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'forge_master.Users' doesn't exist in /home/forge/public_html/controllers/login_controller.php:10
+Stack trace:
+#0 /home/forge/public_html/controllers/login_controller.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/forge/public_html/controllers/login_controller.php on line 10
+[10-Jan-2019 06:08:50 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'forge_master.Users' doesn't exist in /home/forge/public_html/controllers/login_controller.php:10
+Stack trace:
+#0 /home/forge/public_html/controllers/login_controller.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/forge/public_html/controllers/login_controller.php on line 10
+[10-Jan-2019 06:09:09 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'forge_master.Users' doesn't exist in /home/forge/public_html/controllers/login_controller.php:10
+Stack trace:
+#0 /home/forge/public_html/controllers/login_controller.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/forge/public_html/controllers/login_controller.php on line 10
+[10-Jan-2019 06:15:34 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'forge_master.Users' doesn't exist in /home/forge/public_html/controllers/login_controller.php:10
+Stack trace:
+#0 /home/forge/public_html/controllers/login_controller.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/forge/public_html/controllers/login_controller.php on line 10
+[10-Jan-2019 06:15:48 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'forge_master.Users' doesn't exist in /home/forge/public_html/controllers/login_controller.php:10
+Stack trace:
+#0 /home/forge/public_html/controllers/login_controller.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/forge/public_html/controllers/login_controller.php on line 10
+[10-Jan-2019 16:38:18 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'forge_master.Users' doesn't exist in /home/forge/public_html/controllers/login_controller.php:10
+Stack trace:
+#0 /home/forge/public_html/controllers/login_controller.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/forge/public_html/controllers/login_controller.php on line 10
+[10-Jan-2019 17:09:50 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'forge_master.Users' doesn't exist in /home/forge/public_html/controllers/login_controller.php:10
+Stack trace:
+#0 /home/forge/public_html/controllers/login_controller.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/forge/public_html/controllers/login_controller.php on line 10
+[10-Jan-2019 17:09:57 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'forge_master.Users' doesn't exist in /home/forge/public_html/controllers/login_controller.php:10
+Stack trace:
+#0 /home/forge/public_html/controllers/login_controller.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/forge/public_html/controllers/login_controller.php on line 10
+[10-Jan-2019 17:11:21 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'forge_master.Users' doesn't exist in /home/forge/public_html/controllers/login_controller.php:10
+Stack trace:
+#0 /home/forge/public_html/controllers/login_controller.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/forge/public_html/controllers/login_controller.php on line 10
+[10-Jan-2019 21:40:27 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'forge_master.Users' doesn't exist in /home/forge/public_html/controllers/login_controller.php:10
+Stack trace:
+#0 /home/forge/public_html/controllers/login_controller.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/forge/public_html/controllers/login_controller.php on line 10
+[10-Jan-2019 21:53:44 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'forge_master.Users' doesn't exist in /home/forge/public_html/controllers/login_controller.php:10
+Stack trace:
+#0 /home/forge/public_html/controllers/login_controller.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/forge/public_html/controllers/login_controller.php on line 10
+[10-Jan-2019 21:54:18 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'forge_master.Users' doesn't exist in /home/forge/public_html/controllers/login_controller.php:10
+Stack trace:
+#0 /home/forge/public_html/controllers/login_controller.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/forge/public_html/controllers/login_controller.php on line 10

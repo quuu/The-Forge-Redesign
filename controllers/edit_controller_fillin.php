@@ -8,7 +8,7 @@ if(isset($_POST['rin'])){
 
     //retrieving rest of user data
     $rin = $_POST['rin'];
-    $stmt = $conn->prepare('SELECT * FROM Users WHERE rin=:user');
+    $stmt = $conn->prepare('SELECT * FROM users WHERE rin=:user');
     $stmt->bindParam(':user',$rin);
     $stmt->execute();
     $user = $stmt->fetch();
