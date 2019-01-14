@@ -5,7 +5,7 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
   //User Information
   $rcsID = $_POST['rcsID'];
   $user_pass = $_POST['password'];
-  $stmt = $conn->prepare('SELECT * FROM Users WHERE rcsID=:user');
+  $stmt = $conn->prepare('SELECT * FROM users WHERE rcsID=:user');
   $stmt->bindParam(':user',$rcsID);
   $stmt->execute();
   $user = $stmt->fetch();
@@ -16,7 +16,7 @@ if(isset($_POST['rcsID']) && isset($_POST['password'])){
     </script>";
   }else{
     if(password_verify($user_pass,$user['password'])){
-      $stmt = $conn->prepare('INSERT INTO Sessions (sessionID, userID,expiration)
+      $stmt = $conn->prepare('INSERT INTO sessions (sessionID, userID,expiration)
       VALUES (:sessionID,:userID,:expiration)');
       //Unique sessionID
       $sessionID = uniqid('',true);
