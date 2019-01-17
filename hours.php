@@ -33,10 +33,9 @@
               <i class="d-block  fa fa-5x fa-globe"></i>
             </div>
             <div class="col-sm-9">
-              <h3 class="">How to Find Us</h3>
+              <h3 class="">Where to Find Us</h3>
               <p class="">Located in
-                <i style="font-weight: bold;">CII 2037</i>
-                <b style="font-weight: bold;">, </b>we can be found by taking the elevator in the low building down to the second floor and following the hallway to the left. &nbsp;We are also up the stairs from WRPI and overlooking the MILL floor.</p>
+                <b style="font-weight: bold;">CII 2037</b>, we can be found by taking the elevator in the Low building down to the second floor and following the hallway to the left. &nbsp;We are also up the stairs from WRPI and overlooking the MILL floor.</p>
             </div>
           </div>
         </div>

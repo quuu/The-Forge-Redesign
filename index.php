@@ -57,7 +57,7 @@
             </div>
             <div class="col-sm-9">
               <h3 class="">Find us Physically</h3>
-              <p class="">We are located in the CII 2037. &nbsp;Take the elevators down in the LOW building to the second floor. &nbsp;If the sign is flipped to OPEN, come on in. &nbsp;The open hours are linked below</p>
+              <p class="">We are located in the CII 2037. &nbsp;Take the elevators down in the Low building to the second floor. &nbsp;If the sign is flipped to OPEN, come on in. &nbsp;The open hours are linked below</p>
               <a class="btn btn-primary" href="hours.php">Hours of Operation
                 <br> </a>
             </div>
@@ -77,7 +77,7 @@
                   </li>
                 </a>
                 <a href="https://www.instagram.com/rpi.forge/" target="_blank" class="virtual_link">
-                  <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Instragram
+                  <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info virtual_list_item">Instagram
                     <i class="fa fa-fw fa-instagram"></i>
                   </li>
                 </a>
