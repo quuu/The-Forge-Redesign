@@ -3,6 +3,7 @@
 
 <head>
   <?php include 'style.php';?>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -55,31 +56,36 @@
                           </div>
                       </div>
 
-                      <div class="row">
+                      <html class="row">
                           <h2 class="text-left">Contact our President</h2>
+
                           <form class="form-horizontal" role="form" method="post" action="success.php">
                               <div class="form-group">
                                   <label for="name" class="col-sm-2 control-label">Name</label>
                                   <div class="col-sm-10">
-                                      <input type="text" class="form-control" id="name" name="name" placeholder="First and Last Name" value="">
+                                      <input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="">
+                                      <?php echo "<p class='text-danger'>$errName</p>";?>
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label for="email" class="col-sm-2 control-label">Email</label>
                                   <div class="col-sm-10">
                                       <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="">
+                                      <?php echo "<p class='text-danger'>$errEmail</p>";?>
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label for="subject" class="col-sm-2 control-label">Subject</label>
                                   <div class="col-sm-10">
-                                      <input class="form-control" name="subject">
+                                      <input type="email" class="form-control" id="subject" name="subject" value="">
+                                      <?php echo "<p class='text-danger'>$errSubject</p>";?>
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label for="message" class="col-sm-2 control-label">Message</label>
                                   <div class="col-sm-10">
                                       <textarea class="form-control" rows="4" name="message"></textarea>
+                                      <?php echo "<p class='text-danger'>$errMessage</p>";?>
                                   </div>
                               </div>
                               <div class="form-group">
@@ -89,10 +95,13 @@
                               </div>
                               <div class="form-group">
                                   <div class="col-sm-10 col-sm-offset-2">
-                                      <! Will be used to display an alert to the user>
+                                      <?php echo $result; ?>
                                   </div>
                               </div>
                           </form>
+
+
+
                       </div>
 
                   </div>
