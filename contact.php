@@ -37,7 +37,7 @@
 <!--                                  <div class="col-sm-3 text-center">-->
 <!--                                      <i class="d-block  fa fa-5x fa-mouse-pointer"></i>-->
 <!--                                  </div>-->
-                                  <div class="col-sm-9">
+                                  <div class="col-sm-10">
                                       <h3 class="">Find us Virtually</h3>
                                       <ul class="list-group">
                                           <a href="https://www.facebook.com/RPIMakerSpace/" target="_blank" class="virtual_link">
@@ -67,12 +67,16 @@
                           $subject = $_POST['subject'];
                           $message = $_POST['message'];
                           $headers = "From: " . $from;
+                          $right = "Mail successfully sent";
+                          $wrong = "There was an error sending your email.  Please try again later";
+
 
                           if (mail($to,$subject,$message,$headers))
-                            echo "Mail successfully sent";
+                              echo "<script type='text/javascript'>alert('$right');</script>";
+//                              echo "Mail successfully sent";
                           else
-                              echo "There was an error sending your email.  Please try again later";
-                          // You can also use header('Location: thank_you.php'); to redirect to another page.
+                              echo "<script type='text/javascript'>alert('$wrong');</script>";
+                         // You can also use header('Location: thank_you.php'); to redirect to another page.
                       }
                       ?>
 <!--                          <div class="row">-->
@@ -93,7 +97,7 @@
                                 <p class="">Contact us directly by filling out the following form</p>
                               </div>
 
-                              <div class="col-md-6" style = "width:2%">
+                              <div class="col-md-6">
                                 <form class="form-horizontal" role="form" method="post" action="">
 
                                   <div class="form-group">
