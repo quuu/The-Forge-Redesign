@@ -4,6 +4,13 @@
     <meta charset="utf-8">
     <title>Print Failed</title>
     <?php include 'style.php';?>
+
+    <script type="text-javascript">
+        function openForm(url) {
+            window.open(url,'form','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=1076,height=768,directories=no,location=no')
+        }
+
+    </script>
 </head>
 
 <body class="bg-secondary">
@@ -21,45 +28,43 @@
 
                         <html class="row">
 
-                        <form class="form-horizontal" role="form" method="post" action="success.php">
-                            <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="">
-                                    <?php echo "<p class='text-danger'>$errName</p>";?>
-                                </div>
-                            </div>
+                        <?php
+                        if(isset($_POST['submit'])){
+
+                            $to = $_POST['email'];
+                            $from = 'rpi.forge@gmail.com';
+                            $subject = "FAILED PRINT NOTIFICATION";
+                            $message = 'Your print has failed <b>your machine will be held for one hour, you must come in and restart it during that time</b> after that, the printer will be freed for use';
+                            $headers = "NO_REPLY@RPI_FORGE";
+                            $right = "Mail successfully sent";
+                            $wrong = "There was an error sending your email";
+
+
+                            if (mail($to,$subject,$message,$headers))
+                                echo "<script type='text/javascript'>alert('$right');</script>";
+//                              echo "Mail successfully sent";
+                            else
+                                echo "<script type='text/javascript'>alert('$wrong');</script>";
+                            // You can also use header('Location: thank_you.php'); to redirect to another page.
+                        }
+                        ?>
+
+
+                        <form class="form-horizontal" role="form" method="post" action="">
+
                             <div class="form-group">
                                 <label for="email" class="col-sm-2 control-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="">
-                                    <?php echo "<p class='text-danger'>$errEmail</p>";?>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="example@domain.com">
                                 </div>
                             </div>
+
                             <div class="form-group">
-                                <label for="subject" class="col-sm-2 control-label">Subject</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="subject" name="subject" value="">
-                                    <?php echo "<p class='text-danger'>$errSubject</p>";?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="message" class="col-sm-2 control-label">Message</label>
-                                <div class="col-sm-10">
-                                    <textarea class="form-control" rows="4" name="message"></textarea>
-                                    <?php echo "<p class='text-danger'>$errMessage</p>";?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-10 col-sm-offset-2">
+                                <div class="col-sm-5 col-sm-offset-2">
                                     <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="col-sm-10 col-sm-offset-2">
-                                    <?php echo $result; ?>
-                                </div>
-                            </div>
+
                         </form>
 
 
