@@ -3,7 +3,6 @@
 
 <head>
   <?php include 'style.php';?>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -17,16 +16,17 @@
                   <h1 class="text-center pt-3 display-4 text-primary">Contact Us</h1>
                   <p class="text-center">Looking to get in touch?</p>
 
-                  <div class="container">
+                  <!--manual adjustment to center the container-->
+                  <div id = "container">
                       <div class="row">
                           <div class="col-md-6 p-4">
                               <div class="row">
-                                  <div class="col-sm-3 text-center">
-                                      <i class="d-block  fa fa-5x fa-globe"></i>
-                                  </div>
+<!--                                  <div class="col-sm-3 text-center">-->
+<!--                                      <i class="d-block  fa fa-5x fa-globe"></i>-->
+<!--                                  </div>-->
                                   <div class="col-sm-9">
                                       <h3 class="">Find us Physically</h3>
-                                      <p class="">We are located in the CII 2037. &nbsp;Take the elevators down in the Low building to the second floor. &nbsp;If the sign is flipped to OPEN, come on in. &nbsp;The open hours are linked below</p>
+                                      <p class="">We are located in the CII 2037. &nbsp;Take the elevators down in the Low building to the second floor. &nbsp;If the sign is flipped to OPEN, come on in. &nbsp;</p>
                                       <a class="btn btn-primary" href="hours.php">Hours of Operation
                                           <br> </a>
                                   </div>
@@ -34,9 +34,9 @@
                           </div>
                           <div class="col-md-6 p-4">
                               <div class="row">
-                                  <div class="col-sm-3 text-center">
-                                      <i class="d-block  fa fa-5x fa-mouse-pointer"></i>
-                                  </div>
+<!--                                  <div class="col-sm-3 text-center">-->
+<!--                                      <i class="d-block  fa fa-5x fa-mouse-pointer"></i>-->
+<!--                                  </div>-->
                                   <div class="col-sm-9">
                                       <h3 class="">Find us Virtually</h3>
                                       <ul class="list-group">
@@ -56,62 +56,99 @@
                           </div>
                       </div>
 
-                      <html class="row">
-                          <h2 class="text-left">Contact our President</h2>
-
-                          <form class="form-horizontal" role="form" method="post" action="success.php">
-                              <div class="form-group">
-                                  <label for="name" class="col-sm-2 control-label">Name</label>
-                                  <div class="col-sm-10">
-                                      <input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="">
-                                      <?php echo "<p class='text-danger'>$errName</p>";?>
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label for="email" class="col-sm-2 control-label">Email</label>
-                                  <div class="col-sm-10">
-                                      <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="">
-                                      <?php echo "<p class='text-danger'>$errEmail</p>";?>
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label for="subject" class="col-sm-2 control-label">Subject</label>
-                                  <div class="col-sm-10">
-                                      <input type="email" class="form-control" id="subject" name="subject" value="">
-                                      <?php echo "<p class='text-danger'>$errSubject</p>";?>
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label for="message" class="col-sm-2 control-label">Message</label>
-                                  <div class="col-sm-10">
-                                      <textarea class="form-control" rows="4" name="message"></textarea>
-                                      <?php echo "<p class='text-danger'>$errMessage</p>";?>
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <div class="col-sm-10 col-sm-offset-2">
-                                      <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <div class="col-sm-10 col-sm-offset-2">
-                                      <?php echo $result; ?>
-                                  </div>
-                              </div>
-                          </form>
 
 
+                      <?php
+                      if(isset($_POST['submit'])){
+
+                          $to = "roberr5@rpi.edu";
+                          $from = $_POST['email'];
+                          $name = $_POST['name'];
+                          $subject = $_POST['subject'];
+                          $message = $_POST['message'];
+                          $headers = "From: " . $from;
+
+                          if (mail($to,$subject,$message,$headers))
+                            echo "Mail successfully sent";
+                          else
+                              echo "There was an error sending your email.  Please try again later";
+                          // You can also use header('Location: thank_you.php'); to redirect to another page.
+                      }
+                      ?>
+<!--                          <div class="row">-->
+                      <!DOCTYPE html>
+                      <head>
+                          <title>Form submission</title>
+                      </head>
+                      <body>
+
+                      <div id = "container" style="width:100%">
+                          <div class="row">
+                              <div class="col-md-6 p-4">
+                                  <div class="row">
+                                      <div class="col-sm-9">
+                                        <h3 class="">Email Us</h3>
+                                      </div>
+                                  </div>
+                                <p class="">Contact us directly by filling out the following form</p>
+                              </div>
+
+                              <div class="col-md-6" style = "width:2%">
+                                <form class="form-horizontal" role="form" method="post" action="">
+
+                                  <div class="form-group">
+                                      <label for="name" class="col-sm-2 control-label">Name</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label for="email" class="col-sm-2 control-label">Email</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" id="email" name="email" placeholder="example@domain.com">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label for="subject" class="col-sm-2 control-label">Subject</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" id="subject" name="subject">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label for="message" class="col-sm-2 control-label">Message</label>
+                                      <div class="col-sm-10">
+                                          <textarea class="form-control" rows="5" name="message"></textarea>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <div class="col-sm-10 col-sm-offset-2">
+                                          <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
+                                      </div>
+                                  </div>
+
+                              </form>
+                              </div>
+                          </div>
 
                       </div>
+
+                      </div>
+
 
                   </div>
 
               </div>
+
           </div>
       </div>
-
-
   </div>
+
+
+<!--  </div>-->
   <?php include 'footer.php';?>
 </body>
 
