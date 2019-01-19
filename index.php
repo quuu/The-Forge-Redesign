@@ -43,7 +43,7 @@
                 <p class="roboto pb-5 text-justify cover-description">The Forge intends to provide the environment to create a collaborative design community on campus, promoting communication, critical thinking, and STEAM (Science, Technology, Engineering, Arts, Mathematics) ideals. Through this, the Forge will provide easy and everyday access to rapid prototyping tools, communication and collaboration tools, and a casual area to work. The Forge will hold workshops, design competitions, and speakers involved in the Making Movement.</p>
               </div>
             </div>
-                  <h2 class="" style="text-align: left; color: gold; font-weight: bold" >weR Gold</h2>
+                  <h2 class="" style="text-align: left; color: gold; font-weight: bold" >WeR Gold</h2>
                   <p class="roboto pb-5" style="text-align: left">Support the Forge at weR Gold!</p>
                   <a class="btn btn-primary" style="background-color: gold; color: black; border: 2px gold; float:left; margin-top: -70px" href="https://impact.rpi.edu/project/13495">Donate
                   <a href="https://impact.rpi.edu/project/13495" target="_blank" class="virtual_link"></a>
