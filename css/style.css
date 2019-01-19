@@ -140,11 +140,22 @@ body {
   font-size: 6em;
   font-family: 'Montserrat', sans-serif;
 }
+.mobile-cover-heading{
+  font-size: 4em;
+  font-family: 'Montserrat', sans-serif;
+}
 
 .cover-text-container{
   border-radius: 25px;
   background: rgb(0, 0, 0); /* Fallback color */
   background: rgba(0, 0, 0, 0.3); /* Black background with 0.5 opacity */
+}
+
+.mobile-cover-description{
+  width: 100%;
+  font-size: 1.2em;
+  border: 2px solid red;
+  border-radius: 5px;
 }
 
 .archivo {

@@ -7,13 +7,31 @@ if(isset($_POST['machine'])){
     $stmt->bindParam(":sessionID", $_COOKIE['FORGE-SESSION']);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    //insert into projects with updated time
     $stmt = $conn->prepare("INSERT INTO projects(plastic, amount, plasticColor, plasticBrand, printTemp, payment, machine, forClass, startTime, eta, endTime, success, timesFailed, userID, userInitials) 
     VALUES (:plastic, :amount, :color, :brand, :temp, :payment, :machine, :forClass, :startTime, :eta, NULL, NULL, 0, :ID, :initials);");
     date_default_timezone_set("America/New_York");
     $start = date("Y-m-d H:i:s",time());
     
-    if(isset($_POST['time']) && $_POST['time'] != ""){
-        $eta = date("Y-m-d H:i:s",time() + $_POST['time'] * 60);
+    if(isset($_POST['hours']) && isset($_POST['minutes']) && $_POST['hours'] != "" && $_POST['minutes'] != ""){
+        //perform conversion from hrs,min to all mins
+        $hr = $_POST['hours'];
+        $min = $_POST['minutes'];
+        //to add to proper time we must convert to seconds
+        $minConversion = ($hr * 60*60) + ($min*60);
+        $error = "Please submit a total print time of less than 3 days (72 hours, 4320 minutes)";
+        $success = "Form submitted";
+
+        if ($minConversion > 4320000) {//greater than 5 days
+            echo "<script type='text/javascript'>alert('$error');
+            window.location.replace(\" ../print_form.php \");
+            </script>";
+        }else {
+              echo "<script type='text/javascript'>alert('$success');</script>";
+          }
+
+        $eta = date("Y-m-d H:i:s",time() + $minConversion);
     }else{
         $eta = NULL;
     }

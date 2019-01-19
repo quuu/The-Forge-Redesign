@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-md-12">
       <h1 class="text-center pt-3 display-4 text-primary">Forge News</h1>
-      <p class="text-center">Follow our facebook page to stay up to date.</p>
+      <p class="text-center">Follow our Facebook page to stay up to date.</p>
     </div>
   </div>
 </div>

@@ -13,6 +13,9 @@ include "controllers/functions.php";
     <?php include 'style.php'?>
     <?php include 'scripts.php'?>
 </head>
+
+
+
 <body class="bg-secondary">
     <div class="container">
       <div class="row">
@@ -59,12 +62,26 @@ include "controllers/functions.php";
                   </div>
 
                   <div class="form-group">
-                    <label for="time">Estimate time to completion (in minutes):</label>
-                    <input type="number" class="form-control required" name="time" min="1" max="1000"/>
+                      <label for="time">Estimated time to complete (hours and minutes)</label>
+                      <div style="display: block">
+                          <div class="row">
+                              <div class="col-md-5">
+                                  <div class="input-group">
+                                      <label style="margin-right:10px" for="hours">Hr</label>
+                                      <input style="margin-right:10px" type="number" class="form-control required" id="hours" name="hours" min="0" max="72"/>
+                                      <label style="margin-right:10px" for="minutes">Min</label>
+                                      <input style="margin-right:10px" type="number" class="form-control required" id="minutes" name="minutes" min="0" max="4320"/>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
                   </div>
                 </div>
 
+
+
                 <div class="form-group">
+
                   <input type="checkbox" name="forclass" value="1"/>
                   <label for="forclass">This print is for a class</label>
                 </div>
@@ -76,7 +93,7 @@ include "controllers/functions.php";
                 <div id="reprintpolicy">
                   <p class="text-center"><strong>Reprint Policy:</strong></p>
                   <p>Your total print is under 50g/7mL. If your print has failed and has consumed less than 50g/7mL of plastic you will not be charged
-                  for up to two aditional reprint attempts.</p>
+                  for up to two additional reprint attempts.</p>
                   <p><strong>The volunteer present has final say. If you wish to appeal your claim, please email kronmm@rpi.edu</strong></p>
 
 
@@ -108,4 +125,6 @@ include "controllers/functions.php";
 </body>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/print_form.js"></script>
+
+
 </html>
