@@ -14,7 +14,7 @@ if(isset($_COOKIE['FORGE-SESSION'])){
 }
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-secondary">
 <head>
   <meta charset="utf-8">
   <title>Login</title>

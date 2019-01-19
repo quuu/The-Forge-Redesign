@@ -10,23 +10,22 @@
     <div class="text-center bg-primary w-100 h-100" style="background-image: url('homePagePhotos/cover.jpg');background-size:cover;background-position:center center;">
       <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-        <header class="masthead mb-auto">
+        <header class="masthead">
           <div class="inner">
-            <a href="index.php"><img src="logo/forgelogo revis3.png" width="50" class="masthead-brand"/></a>
-            <nav class="nav nav-masthead justify-content-center roboto" id="mainNav">
-              <a class="nav-link" href="index.php">Home</a>
-              <a class="nav-link" href="equipment.php">Equipment</a>
-              <a class="nav-link" href="hours.php">Hours</a>
-              <a class="nav-link" href="gallery.php">Gallery</a>
-              <a class="nav-link" href="news.php">News</a>
-              <a class="nav-link" href="contact.php">Contact</a>
+              <!-- <a href="index.php"><img src="logo/forgelogo revis3.png" width="50" class="masthead-brand d-none d-sm-block"/></a> -->
+              <nav class="nav nav-masthead justify-content-center roboto m-auto" id="mainNav">
+                  <a class="nav-link text-center m-auto p-1" href="index.php">Home</a>
+                  <a class="nav-link text-center m-auto p-1" href="equipment.php">Equipment</a>
+                  <a class="nav-link text-center m-auto p-1" href="hours.php">Hours</a>
+                  <a class="nav-link text-center m-auto p-1" href="gallery.php">Gallery</a>
+                  <a class="nav-link text-center m-auto p-1" href="news.php">News</a>
+                  <a class="nav-link text-center m-auto p-1" href="contact.php">Contact</a>
               <?php
               if(isset($_COOKIE['FORGE-SESSION'])){
-                echo "<a class=\"nav-link\" href=\"myforge.php\">My Forge</a>";
-                echo "<a class=\"nav-link\" href=\"controllers/logout_controller.php\">Logout</a>";
+                  echo "<a class=\"nav-link text-center m-auto p-1\" href=\"myforge.php\">My Forge</a>";
+                  echo "<a class=\"nav-link text-center m-auto p-1\" href=\"controllers/logout_controller.php\">Logout</a>";
               }else{
-                echo "<a class=\"nav-link\" href=\"login.php\">Login </a>";
-
+                  echo "<a class=\"nav-link text-center m-auto p-1\" href=\"login.php\">Login </a>";
               }
               ?>
 
@@ -34,21 +33,48 @@
             </nav>
           </div>
         </header>
-        <main role="main" class="inner cover">
-          <div class="container py-2">
+          <!-- Displays on large screens -->
+          <div class="container m-auto d-none d-sm-block">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <h1 class="cover-heading p-0 m-0">THE FORGE</h1>
+                  </div>
+              </div>
             <div class="row">
               <div class="col-sm-12">
-                <h1 class="cover-heading">THE FORGE</h1>
-                <hr class="cover-hr">
-                <p class="roboto pb-5 text-justify cover-description">The Forge intends to provide the environment to create a collaborative design community on campus, promoting communication, critical thinking, and STEAM (Science, Technology, Engineering, Arts, Mathematics) ideals. Through this, the Forge will provide easy and everyday access to rapid prototyping tools, communication and collaboration tools, and a casual area to work. The Forge will hold workshops, design competitions, and speakers involved in the Making Movement.</p>
+                  <hr class="cover-hr p-0 mx-auto mb-3" />
               </div>
             </div>
+              <div class="row">
+                  <div class="col-sm-12">
+                      <p class="roboto text-justify cover-description">The Forge intends to provide the environment to create a collaborative design community on campus, promoting communication, critical thinking, and STEAM (Science, Technology, Engineering, Arts, Mathematics) ideals. Through this, the Forge will provide easy and everyday access to rapid prototyping tools, communication and collaboration tools, and a casual area to work. The Forge will hold workshops, design competitions, and speakers involved in the Making Movement.</p>
+              </div>
+            </div>
+              <!-- needs to be converted to work on mobile -->
+              <div class="container m-auto d-none d-sm-block">
                   <h2 class="" style="text-align: left; color: gold; font-weight: bold" >WeR Gold</h2>
                   <p class="roboto pb-5" style="text-align: left">Support the Forge at weR Gold!</p>
                   <a class="btn btn-primary" style="background-color: gold; color: black; border: 2px gold; float:left; margin-top: -70px" href="https://impact.rpi.edu/project/13495">Donate
                   <a href="https://impact.rpi.edu/project/13495" target="_blank" class="virtual_link"></a>
+              </div>
+              <!-- --------------------------- -->
           </div>
-        </main>
+          <!-- Displayes on large screens -->
+          <!-- Displays on mobile screens -->
+          <div class="container m-auto d-block d-sm-none">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <h1 class="mobile-cover-heading p-auto m-auto">THE FORGE</h1>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-12">
+                      <p class="roboto cover-description p-auto">We are Rensselaer Polytechnic Institutes only interdisciplinary makerspace, and are 100% student run!</p>
+                  </div>
+              </div>
+          </div>
+          <!-- Displayes on mobile screens -->
+      </div>
     </div>
 
     <div class="bg-light">
@@ -93,6 +119,5 @@
     </div>
     </div>
     <?php include 'footer.php';?>
-  </div>
   </body>
 </html>
