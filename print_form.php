@@ -71,26 +71,7 @@ include "controllers/functions.php";
                                       <input style="margin-right:10px" type="number" class="form-control required" id="hours" name="hours" min="0" max="72"/>
                                       <label style="margin-right:10px" for="minutes">Min</label>
                                       <input style="margin-right:10px" type="number" class="form-control required" id="minutes" name="minutes" min="0" max="4320"/>
-
-
-                                      <?php
-                                      if(isset($_POST['submit'])) {
-                                          $hr = $_POST['hours'];
-                                          $min = $_POST['minutes'];
-                                          $answer = $hr * 60 + $min;
-                                          $error = "Please submit a total print time of less than 3 days (72 hours, 4320 minutes)";
-                                          $success = "Form submitted";
-
-                                          if ($answer > 4320) {
-                                              echo "<script type='text/javascript'>alert('$error');</script>";
-                                          }
-                                          else {
-                                              echo "<script type='text/javascript'>alert('$success');</script>";
-                                          }
-                                      }
-                                      ?>
-
-                                  </div><br />
+                                  </div>
                               </div>
                           </div>
                       </div>
