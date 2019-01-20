@@ -16,7 +16,10 @@ include "controllers/functions.php";
 
 
 
-<body class="bg-secondary">
+<body class="bg-light">
+<div class="bg-light pt-3 p-2">
+    <?php include 'nav_bar.php'?>
+</div>
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-9 mx-auto">
