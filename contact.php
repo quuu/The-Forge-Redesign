@@ -93,7 +93,7 @@
                                         <h3 class="">Email Us</h3>
                                       </div>
                                   </div>
-                                <p class="">Contact us directly by filling out the following form</p>
+                                <p class="">Contact us directly by filling out the following form.</p>
                                   <form class="form-horizontal" style="margin-left: -15px" role="form" method="post" action="">
 
                                       <div class="form-group">
