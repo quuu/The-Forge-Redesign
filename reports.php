@@ -242,9 +242,6 @@ $fileName2 .= "Forge_Accounts_Receivable.xlsx";
 $writer = new Xlsx($spreadsheet);
 $writer->save($fileName2);
 
-
-
-
 function make_query($conn,$stmt,&$result, $rowOrColumn){//passing by reference is need to avoid Scope Drop Errors
     $temp = $conn->prepare($stmt);
     $temp->execute();
@@ -256,8 +253,11 @@ function make_query($conn,$stmt,&$result, $rowOrColumn){//passing by reference i
     return;
 }
 ?>
+<?php
+?>
 
 <!-- Now we simply download the newly created file -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     setTimeout(function() {
 
@@ -265,7 +265,7 @@ function make_query($conn,$stmt,&$result, $rowOrColumn){//passing by reference i
         url2 = "<?php echo $fileName2 ?>";
         downloadFile(url);
         downloadFile(url2);
-        document.location.href = "myforge.php";
+        document.location.href = "scripts/delete.php";
 
     }, 2000);
 
@@ -308,7 +308,7 @@ function make_query($conn,$stmt,&$result, $rowOrColumn){//passing by reference i
 
         window.open(sUrl, '_blank');
         return true;
-    }
+    };
 
     window.downloadFile.isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
     window.downloadFile.isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1;
